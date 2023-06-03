@@ -1,5 +1,6 @@
 package dev.whosnickdoglio.baenotes
 
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -7,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -43,8 +46,11 @@ fun NewNoteScreen(
     state: Note,
     onEvent: (Event) -> Unit,
     modifier: Modifier = Modifier,
+    scrollState: ScrollState = rememberScrollState(),
 ) {
-    Column(modifier = modifier.fillMaxSize()) {
+    Column(modifier = modifier
+        .fillMaxSize()
+        .verticalScroll(scrollState)) {
         Text(
             text = "Aye bae bae! Let me take a note for you!",
             fontSize = 36.sp,
@@ -54,7 +60,9 @@ fun NewNoteScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(12.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
             value = state.content,
             onValueChange = { note -> onEvent(NoteContentChange(note)) }
         )
@@ -149,6 +157,6 @@ fun TextSizeSelector(
 
 @Preview
 @Composable
-fun PreviewNewNoteScreen() {
+private fun PreviewNewNoteScreen() {
     BaeNotesTheme { NewNoteScreen(state = Note(), onEvent = {}) }
 }
