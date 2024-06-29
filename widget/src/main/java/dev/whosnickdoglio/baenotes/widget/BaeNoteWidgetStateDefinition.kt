@@ -7,25 +7,26 @@ import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import androidx.datastore.dataStoreFile
 import androidx.glance.state.GlanceStateDefinition
-import dev.whosnickdoglio.baenotes.Note
+import dev.whosnickdoglio.baenotes.model.Note
 import java.io.EOFException
 import java.io.InputStream
 import java.io.OutputStream
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-object BaeNoteWidgetStateDefinition : GlanceStateDefinition<Note> {
+internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<Note> {
 
     override suspend fun getDataStore(context: Context, fileKey: String): DataStore<Note> =
         DataStoreFactory.create(
             serializer = NoteSerializer,
-            produceFile = { context.dataStoreFile("bae_notes_$fileKey") }
-        )
+            produceFile = { context.dataStoreFile("bae_notes_$fileKey") })
 
     override fun getLocation(context: Context, fileKey: String) =
         context.dataStoreFile("bae_notes_$fileKey")
 }
 
-object NoteSerializer : Serializer<Note> {
+private object NoteSerializer : Serializer<Note> {
 
     override val defaultValue: Note = Note()
 
@@ -36,7 +37,8 @@ object NoteSerializer : Serializer<Note> {
             throw CorruptionException("Unable to read Notes", exception)
         }
 
-    override suspend fun writeTo(t: Note, output: OutputStream) {
-        output.write(Json.encodeToString(Note.serializer(), t).encodeToByteArray())
-    }
+    override suspend fun writeTo(t: Note, output: OutputStream) =
+        withContext(Dispatchers.IO) {
+            output.write(Json.encodeToString(Note.serializer(), t).encodeToByteArray())
+        }
 }

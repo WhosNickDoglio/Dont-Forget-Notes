@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes
+package dev.whosnickdoglio.baenotes.configuration
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.layout.Column
@@ -22,7 +22,9 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.whosnickdoglio.baenotes.ui.theme.BaeNotesTheme
+import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
+import dev.whosnickdoglio.baenotes.model.Color
+import dev.whosnickdoglio.baenotes.model.Note
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 

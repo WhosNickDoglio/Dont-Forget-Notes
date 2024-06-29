@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes.ui.theme
+package dev.whosnickdoglio.baenotes.configuration.theme
 
 import androidx.compose.ui.graphics.Color
 

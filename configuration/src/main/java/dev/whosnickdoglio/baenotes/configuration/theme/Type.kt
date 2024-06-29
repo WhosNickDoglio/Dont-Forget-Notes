@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes.ui.theme
+package dev.whosnickdoglio.baenotes.configuration.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

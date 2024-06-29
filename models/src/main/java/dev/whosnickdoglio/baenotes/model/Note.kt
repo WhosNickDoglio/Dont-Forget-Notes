@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes
+package dev.whosnickdoglio.baenotes.model
 
 import kotlinx.serialization.Serializable
 

@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes.ui.theme
+package dev.whosnickdoglio.baenotes.configuration.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

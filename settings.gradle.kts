@@ -17,4 +17,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Bae-Notes"
 
+include(":models")
+include(":widget")
+include(":configuration")
 include(":app")

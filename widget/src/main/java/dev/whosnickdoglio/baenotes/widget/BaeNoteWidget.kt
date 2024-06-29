@@ -19,8 +19,8 @@ import androidx.glance.state.GlanceStateDefinition
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import dev.whosnickdoglio.baenotes.Color as BaeColor
-import dev.whosnickdoglio.baenotes.Note
+import dev.whosnickdoglio.baenotes.model.Color as BaeColor
+import dev.whosnickdoglio.baenotes.model.Note
 
 object BaeNoteWidget : GlanceAppWidget() {
 
@@ -47,17 +47,15 @@ object BaeNoteWidget : GlanceAppWidget() {
                             BaeColor.WHITE -> Color.White
                             BaeColor.TRANSPARENT -> Color.Transparent
                             BaeColor.PINK -> Color.Magenta
-                        }
+                        })) {
+                item {
+                    Text(
+                        text = state.content,
+                        modifier = GlanceModifier.padding(12.dp),
+                        style = state.extractStyle(),
                     )
-        ) {
-            item {
-                Text(
-                    text = state.content,
-                    modifier = GlanceModifier.padding(12.dp),
-                    style = state.extractStyle(),
-                )
+                }
             }
-        }
     }
 
     private fun Note.extractStyle(): TextStyle =
@@ -70,7 +68,5 @@ object BaeNoteWidget : GlanceAppWidget() {
                         BaeColor.WHITE -> Color.White
                         BaeColor.TRANSPARENT -> Color.Transparent
                         BaeColor.PINK -> Color.Magenta
-                    }
-                )
-        )
+                    }))
 }

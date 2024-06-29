@@ -1,4 +1,4 @@
-package dev.whosnickdoglio.baenotes
+package dev.whosnickdoglio.baenotes.configuration
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,8 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
-import dev.whosnickdoglio.baenotes.ui.theme.BaeNotesTheme
+import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
 import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
+import dev.whosnickdoglio.baenotes.model.Note
 import kotlinx.coroutines.launch
 
 class ConfigurationActivity : ComponentActivity() {

@@ -12,7 +12,7 @@
         android:theme="@style/Theme.BaeNotes"
         tools:targetApi="31">
         <activity
-            android:name=".ConfigurationActivity"
+            android:name=".configuration.ConfigurationActivity"
             android:exported="true"
             android:theme="@style/Theme.BaeNotes">
 
