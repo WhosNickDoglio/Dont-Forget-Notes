@@ -59,28 +59,8 @@ android {
 
 dependencies {
     coreLibraryDesugaring(libs.desguar)
-
     lintChecks(libs.lint.compose)
-
     implementation(projects.models)
     implementation(projects.widget)
     implementation(projects.configuration)
-
-    implementation(libs.androidx.core)
-    implementation(libs.androidx.datastore)
-    implementation(libs.androidx.activity.compose)
-
-    implementation(platform(libs.compose.bom))
-    implementation(libs.compose.ui)
-    debugImplementation(libs.compose.ui.tooling)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material)
-
-    implementation(libs.immutableCollections)
-    implementation(libs.serialization)
-
-    implementation(libs.glance.appwidget)
-    implementation(libs.glanceTool.configuration)
-
-    implementation(libs.coroutines.android)
 }
