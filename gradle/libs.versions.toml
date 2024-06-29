@@ -1,6 +1,5 @@
 [versions]
 kotlin = "2.0.0"
-glanceTool = "0.2.2"
 agp = "8.5.0"
 
 [plugins]
@@ -28,8 +27,8 @@ compose-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 compose-material = { module = "androidx.compose.material3:material3" }
 
 glance-appwidget = { module = "androidx.glance:glance-appwidget", version = "1.1.0" }
-glanceTool-configuration = { module = "com.google.android.glance.tools:appwidget-configuration", version.ref = "glanceTool" }
-glanceTool-viewer = { module = "com.google.android.glance.tools:appwidget-viewer", version.ref = "glanceTool" }
+glanceTool-configuration = { module = "com.google.android.glance.tools:appwidget-configuration" }
+glanceTool-viewer = { module = "com.google.android.glance.tools:appwidget-viewer" }
 
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.8.1" }
 

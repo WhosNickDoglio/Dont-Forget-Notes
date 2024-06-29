@@ -21,3 +21,13 @@ include(":models")
 include(":widget")
 include(":configuration")
 include(":app")
+
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+includeBuild("glance-experimental-tools") {
+    dependencySubstitution {
+        substitute(module("com.google.android.glance.tools:appwidget-configuration"))
+            .using(project(":appwidget-configuration"))
+    }
+}

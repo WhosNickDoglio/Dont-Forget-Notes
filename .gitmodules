@@ -1,0 +1,3 @@
+[submodule "glance-experimental-tools"]
+	path = glance-experimental-tools
+	url = git@github.com:WhosNickDoglio/glance-experimental-tools.git
