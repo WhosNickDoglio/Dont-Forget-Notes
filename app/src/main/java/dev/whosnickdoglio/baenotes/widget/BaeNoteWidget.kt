@@ -7,8 +7,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
-import androidx.glance.action.actionStartActivity
-import androidx.glance.action.clickable
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.lazy.LazyColumn
@@ -22,7 +20,6 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import dev.whosnickdoglio.baenotes.Color as BaeColor
-import dev.whosnickdoglio.baenotes.ConfigurationActivity
 import dev.whosnickdoglio.baenotes.Note
 
 object BaeNoteWidget : GlanceAppWidget() {
@@ -50,16 +47,17 @@ object BaeNoteWidget : GlanceAppWidget() {
                             BaeColor.WHITE -> Color.White
                             BaeColor.TRANSPARENT -> Color.Transparent
                             BaeColor.PINK -> Color.Magenta
-                        })
-                    .clickable(actionStartActivity<ConfigurationActivity>())) {
-                item {
-                    Text(
-                        text = state.content,
-                        modifier = GlanceModifier.padding(12.dp),
-                        style = state.extractStyle(),
+                        }
                     )
-                }
+        ) {
+            item {
+                Text(
+                    text = state.content,
+                    modifier = GlanceModifier.padding(12.dp),
+                    style = state.extractStyle(),
+                )
             }
+        }
     }
 
     private fun Note.extractStyle(): TextStyle =
@@ -72,5 +70,7 @@ object BaeNoteWidget : GlanceAppWidget() {
                         BaeColor.WHITE -> Color.White
                         BaeColor.TRANSPARENT -> Color.Transparent
                         BaeColor.PINK -> Color.Magenta
-                    }))
+                    }
+                )
+        )
 }

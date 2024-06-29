@@ -12,7 +12,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -35,12 +34,10 @@ data class TextColorChange(val color: Color) : Event
 
 data class BackgroundColorChange(val color: Color) : Event
 
-object TextSizeIncrement : Event
+data object TextSizeIncrement : Event
 
-object TextSizeDecrement : Event
+data object TextSizeDecrement : Event
 
-// TODO insets and better theming
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewNoteScreen(
     state: Note,
@@ -48,9 +45,7 @@ fun NewNoteScreen(
     modifier: Modifier = Modifier,
     scrollState: ScrollState = rememberScrollState(),
 ) {
-    Column(modifier = modifier
-        .fillMaxSize()
-        .verticalScroll(scrollState)) {
+    Column(modifier = modifier.fillMaxSize().verticalScroll(scrollState)) {
         Text(
             text = "Aye bae bae! Let me take a note for you!",
             fontSize = 36.sp,
@@ -60,9 +55,7 @@ fun NewNoteScreen(
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp),
+            modifier = Modifier.fillMaxWidth().padding(12.dp),
             value = state.content,
             onValueChange = { note -> onEvent(NoteContentChange(note)) }
         )
