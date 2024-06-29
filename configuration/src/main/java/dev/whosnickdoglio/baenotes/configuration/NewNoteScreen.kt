@@ -72,7 +72,10 @@ fun NewNoteScreen(
     modifier: Modifier = Modifier,
     scrollState: ScrollState = rememberScrollState(),
 ) {
-    Column(modifier = modifier.fillMaxSize().verticalScroll(scrollState)) {
+    Column(modifier = modifier
+        .verticalScroll(scrollState)
+        .fillMaxSize()
+    ) {
         Text(
             text = "Aye bae bae! Let me take a note for you!",
             fontSize = 36.sp,
@@ -84,7 +87,8 @@ fun NewNoteScreen(
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth().padding(12.dp),
             value = state.content,
-            onValueChange = { note -> onEvent(NoteContentChange(note)) }
+            onValueChange = { note -> onEvent(NoteContentChange(note)) },
+            placeholder = { Text(text = "Note content...") },
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -112,6 +116,8 @@ fun NewNoteScreen(
             onDecrement = { onEvent(TextSizeDecrement) },
             onIncrement = { onEvent(TextSizeIncrement) }
         )
+
+        Spacer(modifier = Modifier.height(40.dp))
     }
 }
 
