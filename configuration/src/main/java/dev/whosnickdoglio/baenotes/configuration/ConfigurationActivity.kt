@@ -94,32 +94,31 @@ private fun ConfigurationScreen() {
             state = currentState,
             onEvent = { event ->
                 when (event) {
-                    is BackgroundColorChange -> {
-                        configurationState.updateCurrentState<Note> {
-                            it.copy(backgroundColor = event.color)
+                    is NoteEvent.BackgroundColorChange -> {
+                        configurationState.updateCurrentState<Note> { note ->
+                            note.copy(backgroundColor = event.color)
                         }
                     }
-                    is NoteContentChange -> {
-                        configurationState.updateCurrentState<Note> {
-                            it.copy(content = event.content)
+                    is NoteEvent.ContentChange -> {
+                        configurationState.updateCurrentState<Note> { note ->
+                            note.copy(content = event.content)
                         }
                     }
-                    is TextColorChange -> {
-                        configurationState.updateCurrentState<Note> {
-                            it.copy(textColor = event.color)
+                    is NoteEvent.TextColorChange -> {
+                        configurationState.updateCurrentState<Note> { note ->
+                            note.copy(textColor = event.color)
                         }
                     }
-                    is TextSizeDecrement -> {
-                        configurationState.updateCurrentState<Note> {
-                            val currentTextSize = it.textSize
-
-                            it.copy(textSize = currentTextSize - 2)
+                    is NoteEvent.TextSizeDecrement -> {
+                        configurationState.updateCurrentState<Note> { note ->
+                            val currentTextSize = note.textSize
+                            note.copy(textSize = currentTextSize - 2)
                         }
                     }
-                    is TextSizeIncrement -> {
-                        configurationState.updateCurrentState<Note> {
-                            val currentTextSize = it.textSize
-                            it.copy(textSize = currentTextSize + 2)
+                    is NoteEvent.TextSizeIncrement -> {
+                        configurationState.updateCurrentState<Note> { note ->
+                            val currentTextSize = note.textSize
+                            note.copy(textSize = currentTextSize + 2)
                         }
                     }
                 }

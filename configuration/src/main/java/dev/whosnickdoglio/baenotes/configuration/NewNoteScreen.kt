@@ -48,22 +48,23 @@ import dev.whosnickdoglio.baenotes.model.Color
 import dev.whosnickdoglio.baenotes.model.Note
 import kotlinx.collections.immutable.persistentListOf
 
-sealed interface Event
+sealed interface NoteEvent {
+    data class ContentChange(val content: String) : NoteEvent
 
-data class NoteContentChange(val content: String) : Event
+    data class TextColorChange(val color: Color) : NoteEvent
 
-data class TextColorChange(val color: Color) : Event
+    data class BackgroundColorChange(val color: Color) : NoteEvent
 
-data class BackgroundColorChange(val color: Color) : Event
+    data object TextSizeIncrement : NoteEvent
 
-data object TextSizeIncrement : Event
+    data object TextSizeDecrement : NoteEvent
+}
 
-data object TextSizeDecrement : Event
 
 @Composable
 fun NewNoteScreen(
     state: Note,
-    onEvent: (Event) -> Unit,
+    onEvent: (NoteEvent) -> Unit,
     modifier: Modifier = Modifier,
     scrollState: ScrollState = rememberScrollState(),
 ) {
@@ -79,7 +80,7 @@ fun NewNoteScreen(
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth().padding(12.dp),
             value = state.content,
-            onValueChange = { note -> onEvent(NoteContentChange(note)) },
+            onValueChange = { note -> onEvent(NoteEvent.ContentChange(note)) },
             placeholder = { Text(text = "Note content...") },
         )
 
@@ -88,7 +89,7 @@ fun NewNoteScreen(
         ColorRadioGroup(
             title = "Text Color",
             options = persistentListOf(Color.BLACK, Color.WHITE, Color.PINK),
-            onSelected = { onEvent(TextColorChange(it)) },
+            onSelected = { onEvent(NoteEvent.TextColorChange(it)) },
             currentSelection = state.textColor
         )
 
@@ -97,7 +98,7 @@ fun NewNoteScreen(
         ColorRadioGroup(
             title = "Background Color",
             options = persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK),
-            onSelected = { onEvent(BackgroundColorChange(it)) },
+            onSelected = { onEvent(NoteEvent.BackgroundColorChange(it)) },
             currentSelection = state.backgroundColor
         )
 
@@ -105,8 +106,8 @@ fun NewNoteScreen(
 
         TextSizeSelector(
             textSize = state.textSize.toString(),
-            onDecrement = { onEvent(TextSizeDecrement) },
-            onIncrement = { onEvent(TextSizeIncrement) }
+            onDecrement = { onEvent(NoteEvent.TextSizeDecrement) },
+            onIncrement = { onEvent(NoteEvent.TextSizeIncrement) }
         )
 
         Spacer(modifier = Modifier.height(40.dp))
