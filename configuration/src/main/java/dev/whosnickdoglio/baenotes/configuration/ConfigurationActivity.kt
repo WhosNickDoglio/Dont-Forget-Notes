@@ -45,8 +45,8 @@ import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
 import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
-import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
 import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
 import kotlinx.coroutines.launch
 
 class ConfigurationActivity : ComponentActivity() {
