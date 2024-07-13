@@ -27,7 +27,6 @@ import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
 
 plugins {
     id("convention.app")
-    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.licensee)
 }
 
@@ -70,8 +69,6 @@ android {
         allWarningsAsErrors = true
         jvmTarget = NotesConfiguration.javaVersion.toString()
     }
-    buildFeatures { compose = true }
-
     lint {
         disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
         htmlReport = false
