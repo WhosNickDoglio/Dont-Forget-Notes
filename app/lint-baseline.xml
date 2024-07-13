@@ -24,18 +24,7 @@
   ~
   -->
 
-<issues format="6" by="lint 8.1.0-beta04" type="baseline" client="gradle" dependencies="false" name="AGP (8.1.0-beta04)" variant="all" version="8.1.0-beta04">
-
-    <issue
-        id="GradleDependency"
-        message="A newer version of androidx.core:core-ktx than 1.11.0-beta01 is available: 1.12.0-alpha04"
-        errorLine1="androidx-core = { module = &quot;androidx.core:core-ktx&quot;, version = &quot;1.11.0-beta01&quot; }"
-        errorLine2="                                                               ~~~~~~~~~~~~~~~">
-        <location
-            file="$HOME/StudioProjects/BaeNotes/gradle/libs.versions.toml"
-            line="15"
-            column="64"/>
-    </issue>
+<issues format="6" by="lint 8.5.1" type="baseline" client="gradle" dependencies="false" name="AGP (8.5.1)" variant="all" version="8.5.1">
 
     <issue
         id="UnusedResources"
@@ -44,7 +33,7 @@
         errorLine2="^">
         <location
             file="src/main/res/drawable/ic_launcher_foreground.xml"
-            line="1"
+            line="26"
             column="1"/>
     </issue>
 
