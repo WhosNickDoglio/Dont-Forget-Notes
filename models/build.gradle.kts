@@ -28,4 +28,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
-dependencies { api(libs.serialization) }
+dependencies {
+    api(libs.serialization)
+    implementation(libs.compose.runtime)
+}

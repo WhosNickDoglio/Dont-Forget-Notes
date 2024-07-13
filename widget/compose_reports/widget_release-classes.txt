@@ -1,0 +1,12 @@
+unstable class BaeNoteWidget {
+  unstable val stateDefinition: GlanceStateDefinition<*>
+  unstable val sizeMode: SizeMode
+  <runtime stability> = Unstable
+}
+runtime class BaeNoteWidgetReceiver {
+  runtime val glanceAppWidget: GlanceAppWidget
+  <runtime stability> = Runtime(GlanceAppWidget)
+}
+stable class BaeNoteWidgetStateDefinition {
+  <runtime stability> = Stable
+}

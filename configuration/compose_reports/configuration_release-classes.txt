@@ -1,0 +1,21 @@
+stable class ConfigurationActivity {
+  <runtime stability> = Stable
+}
+stable class ContentChange {
+  stable val content: String
+  <runtime stability> = Stable
+}
+stable class TextColorChange {
+  stable val color: Color
+  <runtime stability> = Stable
+}
+stable class BackgroundColorChange {
+  stable val color: Color
+  <runtime stability> = Stable
+}
+stable class TextSizeIncrement {
+  <runtime stability> = Stable
+}
+stable class TextSizeDecrement {
+  <runtime stability> = Stable
+}

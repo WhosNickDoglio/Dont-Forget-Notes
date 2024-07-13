@@ -1,0 +1,4 @@
+restartable skippable scheme("[androidx.glance.GlanceComposable]") fun NoteWidget(
+  stable state: NoteWidgetState
+  stable modifier: GlanceModifier? = @static Companion
+)

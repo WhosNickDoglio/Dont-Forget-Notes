@@ -25,9 +25,11 @@
 
 package dev.whosnickdoglio.baenotes.model
 
+import androidx.compose.runtime.Stable
 import kotlinx.serialization.Serializable
 
 @Serializable
+@Stable
 public data class NoteWidgetState(
     val content: String = "",
     val textColor: Color = Color.SYSTEM,
