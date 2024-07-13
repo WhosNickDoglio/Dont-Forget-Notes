@@ -18,8 +18,8 @@ jobs:
         with:
           submodules: true
       - uses: ./.github/actions/setup
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug
+      - name: Build
+        run: ./gradlew assemble
   Lint:
     runs-on: ubuntu-latest
     needs: [ Build ]
