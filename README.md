@@ -1,4 +1,4 @@
-# Bae Notes
+# Don't Forget: Persistent Note Widget
 
 
 # License

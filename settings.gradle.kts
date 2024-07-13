@@ -41,7 +41,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Bae-Notes"
+rootProject.name = "Dont-Forget-Notes"
 
 include(":models")
 include(":widget")
