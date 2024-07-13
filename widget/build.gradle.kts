@@ -49,9 +49,9 @@ dependencies {
 
     debugImplementation(libs.compose.ui.tooling)
 
-    testImplementation(libs.junit)
     testImplementation(libs.assertk)
-    testImplementation(libs.robolectric)
     testImplementation(libs.glance.appwidget.testing)
     testImplementation(libs.glance.testing)
+    testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
 }
