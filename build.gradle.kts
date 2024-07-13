@@ -31,9 +31,14 @@ plugins {
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.composeGuard) apply false
+    alias(libs.plugins.dependencyGuard)
     alias(libs.plugins.gradle.versions)
     alias(libs.plugins.dependency.analysis)
     alias(libs.plugins.doctor)
+}
+
+dependencyGuard {
+    configuration("classpath")
 }
 
 doctor {

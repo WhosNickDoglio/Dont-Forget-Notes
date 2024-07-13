@@ -28,6 +28,11 @@ import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
 plugins {
     id("convention.app")
     alias(libs.plugins.licensee)
+    alias(libs.plugins.dependencyGuard)
+}
+
+dependencyGuard {
+    configuration("releaseRuntimeClasspath")
 }
 
 licensee {
