@@ -33,20 +33,20 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(libs.versions.jdk.get().toInt())
     explicitApi()
 }
 
-// lint {
-//    disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck"))
-//    htmlReport = false
-//    xmlReport = false
-//    textReport = true
-//    absolutePaths = false
-//    checkTestSources = true
-//    warningsAsErrors = true
-//    baseline = project.file("lint-baseline.xml")
-// }
+ lint {
+    disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
+    htmlReport = false
+    xmlReport = false
+    textReport = true
+    absolutePaths = false
+    checkTestSources = true
+    warningsAsErrors = true
+    baseline = project.file("lint-baseline.xml")
+ }
 
 spotless {
     format("misc") {

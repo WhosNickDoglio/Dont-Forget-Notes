@@ -28,7 +28,13 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-android { namespace = "dev.whosnickdoglio.baenotes.widget" }
+android {
+    namespace = "dev.whosnickdoglio.baenotes.widget"
+    testOptions {
+        // https://robolectric.org/getting-started/#building-with-gradle
+        unitTests.isIncludeAndroidResources = true
+    }
+}
 
 dependencies {
     implementation(libs.androidx.core)
@@ -42,4 +48,10 @@ dependencies {
     implementation(projects.models)
 
     debugImplementation(libs.compose.ui.tooling)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.assertk)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.glance.appwidget.testing)
+    testImplementation(libs.glance.testing)
 }

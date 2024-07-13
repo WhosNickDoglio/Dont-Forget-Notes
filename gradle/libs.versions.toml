@@ -12,7 +12,6 @@ sort = "0.7"
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
-ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.18.0" }
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
@@ -22,7 +21,6 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
-cacheFix = { id = "org.gradle.android.cache-fix", version.ref = "cacheFix" }
 composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
@@ -31,13 +29,11 @@ dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version =
 
 [libraries]
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
-androidx-datastore = { module = "androidx.datastore:datastore", version = "1.1.1" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.0" }
 
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-licensee-gradle = { module = "app.cash.licensee:licensee-gradle-plugin", version.ref = "licensee" }
 spotless-gradle = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 cacheFix-gradle = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version.ref = "cacheFix" }
 sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin", version.ref = "sort" }
@@ -50,9 +46,16 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
 compose-material = { module = "androidx.compose.material3:material3" }
 
-glance-appwidget = { module = "androidx.glance:glance-appwidget", version = "1.1.0" }
-glance-material = { module = "androidx.glance:glance-material3", version = "1.1.0" }
 glanceTool-configuration = { module = "com.google.android.glance.tools:appwidget-configuration" }
+glance-appwidget = { module = "androidx.glance:glance-appwidget", version = "1.1.0" }
+glance-appwidget-testing = { module = "androidx.glance:glance-appwidget-testing", version = "1.1.0" }
+glance-material = { module = "androidx.glance:glance-material3", version = "1.1.0" }
+glance-testing = { module = "androidx.glance:glance-testing", version = "1.1.0" }
+
+
+junit = { module = "junit:junit", version = "4.13.2" }
+assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
+robolectric = { module = "org.robolectric:robolectric", version = "4.13"}
 
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin"}
 

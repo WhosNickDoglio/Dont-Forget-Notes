@@ -35,11 +35,15 @@ import androidx.glance.appwidget.lazy.LazyColumn
 import androidx.glance.background
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
+import androidx.glance.semantics.contentDescription
+import androidx.glance.semantics.semantics
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
 import dev.whosnickdoglio.baenotes.model.Color as NoteColor
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
+
+internal const val NOTE_TEXT_SEMANTICS = "Note content"
 
 @Composable
 internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = GlanceModifier) {
@@ -52,7 +56,8 @@ internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = Glanc
             item {
                 Text(
                     text = state.content,
-                    modifier = GlanceModifier.padding(12.dp),
+                    modifier = GlanceModifier.padding(12.dp)
+                        .semantics { contentDescription = NOTE_TEXT_SEMANTICS },
                     style =
                         TextStyle(
                             fontSize = state.textSize.sp,
