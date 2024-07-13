@@ -42,7 +42,7 @@ jobs:
           submodules: true
       - uses: ./.github/actions/setup
       - name: Run Unit Tests
-        run: ./gradlew test --stacktrace
+        run: ./gradlew test
 #      - name: Codecov
 #        uses: codecov/codecov-action@v4.5.0
 #        with:
