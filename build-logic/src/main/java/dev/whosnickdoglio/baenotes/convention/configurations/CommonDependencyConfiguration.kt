@@ -38,13 +38,9 @@ internal class CommonDependencyConfiguration : Configuration {
             val libs = catalog.named("libs")
 
             dependencies.add(
-                "implementation",
-                dependencies.platform(libs.findLibrary("compose-bom").get())
-            )
+                "implementation", dependencies.platform(libs.findLibrary("compose-bom").get()))
             dependencies.add(
-                "implementation",
-                dependencies.platform(libs.findLibrary("kotlin-bom").get())
-            )
+                "implementation", dependencies.platform(libs.findLibrary("kotlin-bom").get()))
             dependencies.add("lintChecks", libs.findLibrary("lints-compose").get())
         }
 }

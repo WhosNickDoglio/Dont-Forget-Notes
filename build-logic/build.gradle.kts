@@ -37,7 +37,7 @@ kotlin {
     explicitApi()
 }
 
- lint {
+lint {
     disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
     htmlReport = false
     xmlReport = false
@@ -46,7 +46,7 @@ kotlin {
     checkTestSources = true
     warningsAsErrors = true
     baseline = project.file("lint-baseline.xml")
- }
+}
 
 spotless {
     format("misc") {
