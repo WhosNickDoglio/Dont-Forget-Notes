@@ -31,9 +31,7 @@ plugins {
     alias(libs.plugins.dependencyGuard)
 }
 
-dependencyGuard {
-    configuration("releaseRuntimeClasspath")
-}
+dependencyGuard { configuration("releaseRuntimeClasspath") }
 
 licensee {
     allow("Apache-2.0")
