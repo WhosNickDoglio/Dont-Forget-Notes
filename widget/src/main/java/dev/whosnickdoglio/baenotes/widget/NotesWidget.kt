@@ -26,6 +26,7 @@
 package dev.whosnickdoglio.baenotes.widget
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceModifier
@@ -36,22 +37,15 @@ import androidx.glance.layout.padding
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import dev.whosnickdoglio.baenotes.model.Color
-import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.model.Color as NoteColor
+import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 
 @Composable
-internal fun NoteWidget(state: Note, modifier: GlanceModifier = GlanceModifier) {
+internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = GlanceModifier) {
     LazyColumn(
-        modifier =
-            modifier
-                .fillMaxSize()
-                .background(
-                    when (state.backgroundColor) {
-                        Color.BLACK -> androidx.compose.ui.graphics.Color.Black
-                        Color.WHITE -> androidx.compose.ui.graphics.Color.White
-                        Color.TRANSPARENT -> androidx.compose.ui.graphics.Color.Transparent
-                        Color.PINK -> androidx.compose.ui.graphics.Color.Magenta
-                    })) {
+        modifier = modifier.fillMaxSize()
+            .background(state.backgroundColor.toComposeColor())
+    ) {
             item {
                 Text(
                     text = state.content,
@@ -62,14 +56,16 @@ internal fun NoteWidget(state: Note, modifier: GlanceModifier = GlanceModifier) 
         }
 }
 
-private fun Note.extractStyle(): TextStyle =
+private fun NoteWidgetState.extractStyle(): TextStyle =
     TextStyle(
         fontSize = textSize.sp,
-        color =
-            ColorProvider(
-                when (textColor) {
-                    Color.BLACK -> androidx.compose.ui.graphics.Color.Black
-                    Color.WHITE -> androidx.compose.ui.graphics.Color.White
-                    Color.TRANSPARENT -> androidx.compose.ui.graphics.Color.Transparent
-                    Color.PINK -> androidx.compose.ui.graphics.Color.Magenta
-                }))
+        color = ColorProvider(textColor.toComposeColor())
+    )
+
+private fun NoteColor.toComposeColor(): Color =
+    when (this) {
+        NoteColor.BLACK -> Color.Black
+        NoteColor.WHITE -> Color.White
+        NoteColor.TRANSPARENT -> Color.Transparent
+        NoteColor.PINK -> Color.Magenta
+    }

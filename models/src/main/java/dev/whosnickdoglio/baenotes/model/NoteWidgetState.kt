@@ -28,7 +28,7 @@ package dev.whosnickdoglio.baenotes.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-public data class Note(
+public data class NoteWidgetState(
     val content: String = "",
     val textColor: Color = Color.WHITE,
     val backgroundColor: Color = Color.TRANSPARENT,

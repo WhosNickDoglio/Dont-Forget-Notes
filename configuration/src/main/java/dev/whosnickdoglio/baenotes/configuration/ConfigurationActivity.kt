@@ -45,7 +45,7 @@ import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
 import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
-import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
 import kotlinx.coroutines.launch
 
@@ -88,35 +88,35 @@ private fun ConfigurationScreen() {
             }
         }
     ) {
-        val currentState = configurationState.getCurrentState<Note>() ?: Note()
+        val currentState = configurationState.getCurrentState<NoteWidgetState>() ?: NoteWidgetState()
 
         NewNoteScreen(
             state = currentState,
             onEvent = { event ->
                 when (event) {
                     is NoteEvent.BackgroundColorChange -> {
-                        configurationState.updateCurrentState<Note> { note ->
+                        configurationState.updateCurrentState<NoteWidgetState> { note ->
                             note.copy(backgroundColor = event.color)
                         }
                     }
                     is NoteEvent.ContentChange -> {
-                        configurationState.updateCurrentState<Note> { note ->
+                        configurationState.updateCurrentState<NoteWidgetState> { note ->
                             note.copy(content = event.content)
                         }
                     }
                     is NoteEvent.TextColorChange -> {
-                        configurationState.updateCurrentState<Note> { note ->
+                        configurationState.updateCurrentState<NoteWidgetState> { note ->
                             note.copy(textColor = event.color)
                         }
                     }
                     is NoteEvent.TextSizeDecrement -> {
-                        configurationState.updateCurrentState<Note> { note ->
+                        configurationState.updateCurrentState<NoteWidgetState> { note ->
                             val currentTextSize = note.textSize
                             note.copy(textSize = currentTextSize - 2)
                         }
                     }
                     is NoteEvent.TextSizeIncrement -> {
-                        configurationState.updateCurrentState<Note> { note ->
+                        configurationState.updateCurrentState<NoteWidgetState> { note ->
                             val currentTextSize = note.textSize
                             note.copy(textSize = currentTextSize + 2)
                         }

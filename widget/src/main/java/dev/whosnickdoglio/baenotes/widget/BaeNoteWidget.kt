@@ -33,7 +33,7 @@ import androidx.glance.appwidget.SizeMode
 import androidx.glance.appwidget.provideContent
 import androidx.glance.currentState
 import androidx.glance.state.GlanceStateDefinition
-import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 
 public object BaeNoteWidget : GlanceAppWidget() {
 
@@ -43,7 +43,7 @@ public object BaeNoteWidget : GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
-            val state = currentState<Note>()
+            val state = currentState<NoteWidgetState>()
             NoteWidget(state)
         }
     }

@@ -32,7 +32,7 @@ import androidx.datastore.core.DataStoreFactory
 import androidx.datastore.core.Serializer
 import androidx.datastore.dataStoreFile
 import androidx.glance.state.GlanceStateDefinition
-import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import java.io.EOFException
 import java.io.InputStream
 import java.io.OutputStream
@@ -40,9 +40,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<Note> {
+internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<NoteWidgetState> {
 
-    override suspend fun getDataStore(context: Context, fileKey: String): DataStore<Note> =
+    override suspend fun getDataStore(context: Context, fileKey: String): DataStore<NoteWidgetState> =
         DataStoreFactory.create(
             serializer = NoteSerializer,
             produceFile = { context.dataStoreFile("bae_notes_$fileKey") })
@@ -51,19 +51,19 @@ internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<Note> {
         context.dataStoreFile("bae_notes_$fileKey")
 }
 
-private object NoteSerializer : Serializer<Note> {
+private object NoteSerializer : Serializer<NoteWidgetState> {
 
-    override val defaultValue: Note = Note()
+    override val defaultValue: NoteWidgetState = NoteWidgetState()
 
-    override suspend fun readFrom(input: InputStream): Note =
+    override suspend fun readFrom(input: InputStream): NoteWidgetState =
         try {
-            Json.decodeFromString(Note.serializer(), input.readBytes().decodeToString())
+            Json.decodeFromString(NoteWidgetState.serializer(), input.readBytes().decodeToString())
         } catch (exception: EOFException) {
             throw CorruptionException("Unable to read Notes", exception)
         }
 
-    override suspend fun writeTo(t: Note, output: OutputStream) =
+    override suspend fun writeTo(t: NoteWidgetState, output: OutputStream) =
         withContext(Dispatchers.IO) {
-            output.write(Json.encodeToString(Note.serializer(), t).encodeToByteArray())
+            output.write(Json.encodeToString(NoteWidgetState.serializer(), t).encodeToByteArray())
         }
 }

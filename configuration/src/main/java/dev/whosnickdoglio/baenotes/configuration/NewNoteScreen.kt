@@ -45,14 +45,19 @@ import dev.whosnickdoglio.baenotes.configuration.components.ColorRadioGroup
 import dev.whosnickdoglio.baenotes.configuration.components.TextSizeSelector
 import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
 import dev.whosnickdoglio.baenotes.model.Color
-import dev.whosnickdoglio.baenotes.model.Note
+import dev.whosnickdoglio.baenotes.model.NoteWidgetState
+import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 internal fun NewNoteScreen(
-    state: Note,
+    state: NoteWidgetState,
     onEvent: (NoteEvent) -> Unit,
     modifier: Modifier = Modifier,
+    defaultTextColors: ImmutableList<Color> =
+        persistentListOf(Color.BLACK, Color.WHITE, Color.PINK),
+    defaultBackgroundColors: ImmutableList<Color> =
+        persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK),
     scrollState: ScrollState = rememberScrollState(),
 ) {
     Column(modifier = modifier.verticalScroll(scrollState).fillMaxSize()) {
@@ -69,27 +74,24 @@ internal fun NewNoteScreen(
 
         ColorRadioGroup(
             title = "Text Color",
-            options = persistentListOf(Color.BLACK, Color.WHITE, Color.PINK),
+            options = defaultTextColors,
             onSelected = { onEvent(NoteEvent.TextColorChange(it)) },
-            currentSelection = state.textColor
-        )
+            currentSelection = state.textColor)
 
         Spacer(modifier = Modifier.height(20.dp))
 
         ColorRadioGroup(
             title = "Background Color",
-            options = persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK),
+            options = defaultBackgroundColors,
             onSelected = { onEvent(NoteEvent.BackgroundColorChange(it)) },
-            currentSelection = state.backgroundColor
-        )
+            currentSelection = state.backgroundColor)
 
         Spacer(modifier = Modifier.height(20.dp))
 
         TextSizeSelector(
             textSize = state.textSize.toString(),
             onDecrement = { onEvent(NoteEvent.TextSizeDecrement) },
-            onIncrement = { onEvent(NoteEvent.TextSizeIncrement) }
-        )
+            onIncrement = { onEvent(NoteEvent.TextSizeIncrement) })
 
         Spacer(modifier = Modifier.height(40.dp))
     }
@@ -110,5 +112,5 @@ internal sealed interface NoteEvent {
 @Preview
 @Composable
 private fun PreviewNewNoteScreen() {
-    BaeNotesTheme { NewNoteScreen(state = Note(), onEvent = {}) }
+    BaeNotesTheme { NewNoteScreen(state = NoteWidgetState(), onEvent = {}) }
 }
