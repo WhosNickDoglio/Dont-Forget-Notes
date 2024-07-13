@@ -1,5 +1,8 @@
 # Don't Forget: Persistent Note Widget
 
+[![CI](https://github.com/WhosNickDoglio/Dont-Forget-Notes/actions/workflows/ci.yml/badge.svg)](https://github.com/WhosNickDoglio/Dont-Forget-Notes/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 # License
 
