@@ -30,8 +30,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 public data class NoteWidgetState(
     val content: String = "",
-    val textColor: Color = Color.WHITE,
-    val backgroundColor: Color = Color.TRANSPARENT,
+    val textColor: Color = Color.SYSTEM,
+    val backgroundColor: Color = Color.SYSTEM,
     val textSize: Int = 12,
 )
 
@@ -40,4 +40,5 @@ public enum class Color {
     WHITE,
     TRANSPARENT,
     PINK,
+    SYSTEM,
 }

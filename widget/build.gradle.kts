@@ -36,6 +36,7 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.glance.appwidget)
+    implementation(libs.glance.material)
     implementation(libs.glanceTool.configuration)
     implementation(libs.immutableCollections)
     implementation(projects.models)

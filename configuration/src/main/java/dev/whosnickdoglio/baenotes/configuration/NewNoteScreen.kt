@@ -55,9 +55,9 @@ internal fun NewNoteScreen(
     onEvent: (NoteEvent) -> Unit,
     modifier: Modifier = Modifier,
     defaultTextColors: ImmutableList<Color> =
-        persistentListOf(Color.BLACK, Color.WHITE, Color.PINK),
+        persistentListOf(Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM),
     defaultBackgroundColors: ImmutableList<Color> =
-        persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK),
+        persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM),
     scrollState: ScrollState = rememberScrollState(),
 ) {
     Column(modifier = modifier.verticalScroll(scrollState).fillMaxSize()) {

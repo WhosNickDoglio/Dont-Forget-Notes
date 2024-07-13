@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.GlanceModifier
+import androidx.glance.GlanceTheme
 import androidx.glance.appwidget.lazy.LazyColumn
 import androidx.glance.background
 import androidx.glance.layout.fillMaxSize
@@ -43,29 +44,30 @@ import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 @Composable
 internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = GlanceModifier) {
     LazyColumn(
-        modifier = modifier.fillMaxSize()
-            .background(state.backgroundColor.toComposeColor())
-    ) {
+        modifier =
+            modifier
+                .fillMaxSize()
+                .background(
+                    state.backgroundColor.toComposeColor(GlanceTheme.colors.widgetBackground))) {
             item {
                 Text(
                     text = state.content,
                     modifier = GlanceModifier.padding(12.dp),
-                    style = state.extractStyle(),
+                    style =
+                        TextStyle(
+                            fontSize = state.textSize.sp,
+                            color =
+                                state.textColor.toComposeColor(GlanceTheme.colors.onBackground)),
                 )
             }
         }
 }
 
-private fun NoteWidgetState.extractStyle(): TextStyle =
-    TextStyle(
-        fontSize = textSize.sp,
-        color = ColorProvider(textColor.toComposeColor())
-    )
-
-private fun NoteColor.toComposeColor(): Color =
+private fun NoteColor.toComposeColor(system: ColorProvider): ColorProvider =
     when (this) {
-        NoteColor.BLACK -> Color.Black
-        NoteColor.WHITE -> Color.White
-        NoteColor.TRANSPARENT -> Color.Transparent
-        NoteColor.PINK -> Color.Magenta
+        NoteColor.BLACK -> ColorProvider(Color.Black)
+        NoteColor.WHITE -> ColorProvider(Color.White)
+        NoteColor.TRANSPARENT -> ColorProvider(Color.Transparent)
+        NoteColor.PINK -> ColorProvider(Color.Magenta)
+        NoteColor.SYSTEM -> system
     }

@@ -27,6 +27,7 @@ package dev.whosnickdoglio.baenotes.widget
 
 import android.content.Context
 import androidx.glance.GlanceId
+import androidx.glance.GlanceTheme
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver
 import androidx.glance.appwidget.SizeMode
@@ -43,8 +44,10 @@ public object BaeNoteWidget : GlanceAppWidget() {
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         provideContent {
-            val state = currentState<NoteWidgetState>()
-            NoteWidget(state)
+            GlanceTheme {
+                val state = currentState<NoteWidgetState>()
+                NoteWidget(state)
+            }
         }
     }
 }
