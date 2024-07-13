@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.0.0"
-agp = "8.5.0"
+agp = "8.5.1"
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
