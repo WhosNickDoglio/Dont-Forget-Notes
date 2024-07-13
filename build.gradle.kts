@@ -43,6 +43,9 @@ dependencyGuard {
 
 doctor {
     warnWhenNotUsingParallelGC = false
+    javaHome {
+        failOnError = false
+    }
 }
 
 
