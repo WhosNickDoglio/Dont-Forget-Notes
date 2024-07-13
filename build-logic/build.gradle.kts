@@ -24,6 +24,74 @@
  */
 
 plugins {
-    `java-gradle-plugin`
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.sortDependencies)
+    alias(libs.plugins.android.lint)
+    `java-gradle-plugin`
+}
+
+kotlin {
+    jvmToolchain(21)
+    explicitApi()
+}
+
+// lint {
+//    disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck"))
+//    htmlReport = false
+//    xmlReport = false
+//    textReport = true
+//    absolutePaths = false
+//    checkTestSources = true
+//    warningsAsErrors = true
+//    baseline = project.file("lint-baseline.xml")
+// }
+
+spotless {
+    format("misc") {
+        target("*.md", ".gitignore")
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+
+    kotlin {
+        ktfmt(libs.versions.ktfmt.get()).kotlinlangStyle()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    kotlinGradle {
+        ktfmt(libs.versions.ktfmt.get()).kotlinlangStyle()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+gradlePlugin {
+    plugins {
+        register("convention.kotlin") {
+            id = "convention.kotlin"
+            implementationClass = "dev.whosnickdoglio.baenotes.convention.KotlinLibPlugin"
+        }
+
+        register("convention.android") {
+            id = "convention.android"
+            implementationClass = "dev.whosnickdoglio.baenotes.convention.AndroidLibPlugin"
+        }
+
+        register("convention.app") {
+            id = "convention.app"
+            implementationClass = "dev.whosnickdoglio.baenotes.convention.AppPlugin"
+        }
+    }
+}
+
+dependencies {
+    implementation(libs.android.gradle)
+    implementation(libs.cacheFix.gradle)
+    implementation(libs.composeGuard.gradle)
+    implementation(libs.detekt.gradle)
+    implementation(libs.kotlin.gradle)
+    implementation(libs.sortDependencies.gradle)
+    implementation(libs.spotless.gradle)
 }

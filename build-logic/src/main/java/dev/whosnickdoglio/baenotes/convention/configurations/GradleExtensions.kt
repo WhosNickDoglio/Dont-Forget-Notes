@@ -23,21 +23,12 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.model
+package dev.whosnickdoglio.baenotes.convention.configurations
 
-import kotlinx.serialization.Serializable
+import org.gradle.api.Project
 
-@Serializable
-public data class Note(
-    val content: String = "",
-    val textColor: Color = Color.WHITE,
-    val backgroundColor: Color = Color.TRANSPARENT,
-    val textSize: Int = 12,
-)
-
-public enum class Color {
-    BLACK,
-    WHITE,
-    TRANSPARENT,
-    PINK,
+internal fun Project.dependOnBuildLogicTask(taskName: String) {
+    tasks.named(taskName).configure {
+        it.dependsOn(gradle.includedBuild("build-logic").task(":$taskName"))
+    }
 }

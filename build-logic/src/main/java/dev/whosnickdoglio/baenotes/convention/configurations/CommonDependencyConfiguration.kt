@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2024. Nicholas Doglio
+ * Copyright (c) 2023-2024. Nicholas Doglio
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,28 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.model
+package dev.whosnickdoglio.baenotes.convention.configurations
 
-import kotlinx.serialization.Serializable
+import org.gradle.api.Project
+import org.gradle.api.artifacts.VersionCatalogsExtension
 
-@Serializable
-public data class Note(
-    val content: String = "",
-    val textColor: Color = Color.WHITE,
-    val backgroundColor: Color = Color.TRANSPARENT,
-    val textSize: Int = 12,
-)
+internal class CommonDependencyConfiguration : Configuration {
+    override fun configure(project: Project): Unit =
+        with(project) {
+            val catalog =
+                extensions.findByType(VersionCatalogsExtension::class.java)
+                    ?: error("No Catalog found!")
 
-public enum class Color {
-    BLACK,
-    WHITE,
-    TRANSPARENT,
-    PINK,
+            val libs = catalog.named("libs")
+
+            dependencies.add(
+                "implementation",
+                dependencies.platform(libs.findLibrary("compose-bom").get())
+            )
+            dependencies.add(
+                "implementation",
+                dependencies.platform(libs.findLibrary("kotlin-bom").get())
+            )
+            dependencies.add("lintChecks", libs.findLibrary("lints-compose").get())
+        }
 }

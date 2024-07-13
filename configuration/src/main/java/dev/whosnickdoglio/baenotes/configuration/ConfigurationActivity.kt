@@ -49,7 +49,7 @@ import dev.whosnickdoglio.baenotes.model.Note
 import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
 import kotlinx.coroutines.launch
 
-class ConfigurationActivity : ComponentActivity() {
+public class ConfigurationActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

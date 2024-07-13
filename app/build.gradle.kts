@@ -1,3 +1,5 @@
+import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
+
 /*
  * MIT License
  *
@@ -24,33 +26,30 @@
  */
 
 plugins {
-    alias(libs.plugins.android.app)
-    alias(libs.plugins.kotlin.android)
+    id("convention.app")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.detekt)
-    alias(libs.plugins.ktfmt)
+    alias(libs.plugins.licensee)
 }
 
-ktfmt { kotlinLangStyle() }
-
-kotlin { jvmToolchain(21) }
+licensee {
+    allow("Apache-2.0")
+    // androidx.glance:glance-appwidget-external-protobuf
+    allow("BSD-3-Clause")
+}
 
 android {
     namespace = "dev.whosnickdoglio.baenotes"
-    compileSdk = 34
+    compileSdk = NotesConfiguration.COMPILE_SDK
 
     defaultConfig {
         applicationId = "dev.whosnickdoglio.baenotes"
-        minSdk = 30
-        targetSdk = 34
+        minSdk = NotesConfiguration.MIN_SDK
+        targetSdk = NotesConfiguration.TARGET_SDK
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        vectorDrawables { useSupportLibrary = true }
     }
 
     buildTypes {
@@ -66,26 +65,31 @@ android {
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = NotesConfiguration.javaVersion
+        targetCompatibility = NotesConfiguration.javaVersion
     }
     kotlinOptions {
         allWarningsAsErrors = true
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = NotesConfiguration.javaVersion.toString()
     }
     buildFeatures { compose = true }
 
     lint {
-        baseline = file("lint-baseline.xml")
-        abortOnError = true
+        disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
+        htmlReport = false
+        xmlReport = false
+        textReport = true
+        absolutePaths = false
+        checkTestSources = true
         warningsAsErrors = true
+        baseline = project.file("lint-baseline.xml")
     }
 }
 
 dependencies {
     coreLibraryDesugaring(libs.desguar)
-    lintChecks(libs.lint.compose)
+
+    implementation(projects.configuration)
     implementation(projects.models)
     implementation(projects.widget)
-    implementation(projects.configuration)
 }

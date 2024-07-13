@@ -48,21 +48,8 @@ import dev.whosnickdoglio.baenotes.model.Color
 import dev.whosnickdoglio.baenotes.model.Note
 import kotlinx.collections.immutable.persistentListOf
 
-sealed interface NoteEvent {
-    data class ContentChange(val content: String) : NoteEvent
-
-    data class TextColorChange(val color: Color) : NoteEvent
-
-    data class BackgroundColorChange(val color: Color) : NoteEvent
-
-    data object TextSizeIncrement : NoteEvent
-
-    data object TextSizeDecrement : NoteEvent
-}
-
-
 @Composable
-fun NewNoteScreen(
+internal fun NewNoteScreen(
     state: Note,
     onEvent: (NoteEvent) -> Unit,
     modifier: Modifier = Modifier,
@@ -112,6 +99,18 @@ fun NewNoteScreen(
 
         Spacer(modifier = Modifier.height(40.dp))
     }
+}
+
+internal sealed interface NoteEvent {
+    data class ContentChange(val content: String) : NoteEvent
+
+    data class TextColorChange(val color: Color) : NoteEvent
+
+    data class BackgroundColorChange(val color: Color) : NoteEvent
+
+    data object TextSizeIncrement : NoteEvent
+
+    data object TextSizeDecrement : NoteEvent
 }
 
 @Preview

@@ -35,7 +35,7 @@ import androidx.glance.currentState
 import androidx.glance.state.GlanceStateDefinition
 import dev.whosnickdoglio.baenotes.model.Note
 
-object BaeNoteWidget : GlanceAppWidget() {
+public object BaeNoteWidget : GlanceAppWidget() {
 
     override val stateDefinition: GlanceStateDefinition<*> = BaeNoteWidgetStateDefinition
 
@@ -49,6 +49,6 @@ object BaeNoteWidget : GlanceAppWidget() {
     }
 }
 
-class BaeNoteWidgetReceiver : GlanceAppWidgetReceiver() {
+public class BaeNoteWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = BaeNoteWidget
 }

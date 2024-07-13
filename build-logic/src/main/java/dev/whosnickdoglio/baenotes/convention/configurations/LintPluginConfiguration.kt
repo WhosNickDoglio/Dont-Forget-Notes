@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2024. Nicholas Doglio
+ * Copyright (c) 2023-2024. Nicholas Doglio
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,19 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.model
+package dev.whosnickdoglio.baenotes.convention.configurations
 
-import kotlinx.serialization.Serializable
+import org.gradle.api.Project
 
-@Serializable
-public data class Note(
-    val content: String = "",
-    val textColor: Color = Color.WHITE,
-    val backgroundColor: Color = Color.TRANSPARENT,
-    val textSize: Int = 12,
-)
-
-public enum class Color {
-    BLACK,
-    WHITE,
-    TRANSPARENT,
-    PINK,
+internal class LintPluginConfiguration : Configuration {
+    override fun configure(project: Project) =
+        with(project) {
+            pluginManager.apply("io.gitlab.arturbosch.detekt")
+            pluginManager.apply("com.squareup.sort-dependencies")
+            dependOnBuildLogicTask("detekt")
+            //            dependOnBuildLogicTask("detektMain")
+            //            dependOnBuildLogicTask("detektTest")
+            dependOnBuildLogicTask("sortDependencies")
+            dependOnBuildLogicTask("checkSortDependencies")
+        }
 }

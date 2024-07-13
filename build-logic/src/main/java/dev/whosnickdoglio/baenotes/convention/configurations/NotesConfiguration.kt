@@ -23,21 +23,13 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.model
+package dev.whosnickdoglio.baenotes.convention.configurations
 
-import kotlinx.serialization.Serializable
+import org.gradle.api.JavaVersion
 
-@Serializable
-public data class Note(
-    val content: String = "",
-    val textColor: Color = Color.WHITE,
-    val backgroundColor: Color = Color.TRANSPARENT,
-    val textSize: Int = 12,
-)
-
-public enum class Color {
-    BLACK,
-    WHITE,
-    TRANSPARENT,
-    PINK,
+public object NotesConfiguration {
+    public val javaVersion: JavaVersion = JavaVersion.VERSION_17
+    public const val MIN_SDK: Int = 30
+    public const val TARGET_SDK: Int = 34
+    public const val COMPILE_SDK: Int = 34
 }

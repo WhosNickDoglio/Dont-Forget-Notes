@@ -30,5 +30,12 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.composeGuard) apply false
     alias(libs.plugins.gradle.versions)
+    alias(libs.plugins.dependency.analysis)
+    alias(libs.plugins.doctor)
+}
+
+doctor {
+    warnWhenNotUsingParallelGC = false
 }
