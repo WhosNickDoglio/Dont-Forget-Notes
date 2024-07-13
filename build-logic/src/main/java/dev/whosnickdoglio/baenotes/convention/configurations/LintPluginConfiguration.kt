@@ -33,8 +33,10 @@ internal class LintPluginConfiguration : Configuration {
             pluginManager.apply("io.gitlab.arturbosch.detekt")
             pluginManager.apply("com.squareup.sort-dependencies")
             dependOnBuildLogicTask("detekt")
-            //            dependOnBuildLogicTask("detektMain")
-            //            dependOnBuildLogicTask("detektTest")
+            afterEvaluate { // Not sure why I need this?
+                dependOnBuildLogicTask("detektMain")
+                dependOnBuildLogicTask("detektTest")
+            }
             dependOnBuildLogicTask("sortDependencies")
             dependOnBuildLogicTask("checkSortDependencies")
         }

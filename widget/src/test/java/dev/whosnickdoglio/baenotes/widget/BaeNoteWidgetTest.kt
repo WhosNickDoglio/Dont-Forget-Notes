@@ -18,7 +18,7 @@ class BaeNoteWidgetTest {
 
         provideComposable { NoteWidget(state = NoteWidgetState(content = "Hello Test")) }
 
-        onNode(hasContentDescription(NOTE_TEXT_SEMANTICS)).assertExists()
-        onNode(hasContentDescription(NOTE_TEXT_SEMANTICS))
+        onNode(hasContentDescription(NoteTextSemantics)).assertExists()
+        onNode(hasContentDescription(NoteTextSemantics))
     }
 }

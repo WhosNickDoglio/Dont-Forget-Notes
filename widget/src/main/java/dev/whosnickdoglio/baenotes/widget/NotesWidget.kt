@@ -43,7 +43,7 @@ import androidx.glance.unit.ColorProvider
 import dev.whosnickdoglio.baenotes.model.Color as NoteColor
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 
-internal const val NOTE_TEXT_SEMANTICS = "Note content"
+internal const val NoteTextSemantics = "Note content"
 
 @Composable
 internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = GlanceModifier) {
@@ -57,7 +57,7 @@ internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = Glanc
                 Text(
                     text = state.content,
                     modifier = GlanceModifier.padding(12.dp)
-                        .semantics { contentDescription = NOTE_TEXT_SEMANTICS },
+                        .semantics { contentDescription = NoteTextSemantics },
                     style =
                         TextStyle(
                             fontSize = state.textSize.sp,
