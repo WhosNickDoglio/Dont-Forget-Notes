@@ -56,12 +56,6 @@ internal fun NewNoteScreen(
     scrollState: ScrollState = rememberScrollState(),
 ) {
     Column(modifier = modifier.verticalScroll(scrollState).fillMaxSize()) {
-        Text(
-            text = "Aye bae bae! Let me take a note for you!",
-            fontSize = 36.sp,
-            modifier = Modifier.padding(12.dp),
-        )
-
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
