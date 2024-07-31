@@ -1,7 +1,7 @@
 [versions]
 kotlin = "2.0.0"
 agp = "8.5.1"
-compose-guard = "2.2.0"
+compose-guard = "2.2.1"
 licensee = "1.11.0"
 ktfmt = "0.51"
 jdk = "21"
@@ -26,11 +26,11 @@ composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
 doctor = { id = "com.osacky.doctor", version = "0.10.0" }
-dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.32.0" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.33.0" }
 
 [libraries]
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.0" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.1" }
 
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
