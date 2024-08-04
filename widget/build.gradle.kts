@@ -40,14 +40,14 @@ dependencies {
     implementation(libs.androidx.core)
     implementation(libs.compose.material)
     implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material)
     implementation(libs.glanceTool.configuration)
     implementation(libs.immutableCollections)
     implementation(projects.models)
 
-    debugImplementation(libs.compose.ui.tooling)
+    debugImplementation(libs.glance.preview)
+    debugImplementation(libs.glance.appwidget.preview)
 
     testImplementation(libs.assertk)
     testImplementation(libs.glance.appwidget.testing)

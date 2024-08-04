@@ -35,6 +35,8 @@ import androidx.glance.appwidget.lazy.LazyColumn
 import androidx.glance.background
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
+import androidx.glance.preview.ExperimentalGlancePreviewApi
+import androidx.glance.preview.Preview
 import androidx.glance.semantics.contentDescription
 import androidx.glance.semantics.semantics
 import androidx.glance.text.Text
@@ -66,6 +68,19 @@ internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = Glanc
                 )
             }
         }
+}
+
+@OptIn(ExperimentalGlancePreviewApi::class)
+@Preview
+@Composable
+private fun PreviewNoteWidget() {
+    GlanceTheme {
+        NoteWidget(
+            state = NoteWidgetState(
+                content = "Hello preview!"
+            )
+        )
+    }
 }
 
 private fun NoteColor.toComposeColor(system: ColorProvider): ColorProvider =
