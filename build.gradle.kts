@@ -37,17 +37,12 @@ plugins {
     alias(libs.plugins.doctor)
 }
 
-dependencyGuard {
-    configuration("classpath")
-}
+dependencyGuard { configuration("classpath") }
 
 doctor {
     warnWhenNotUsingParallelGC = false
-    javaHome {
-        failOnError = false
-    }
+    javaHome { failOnError = false }
 }
-
 
 // https://docs.gradle.org/8.9/userguide/gradle_daemon.html#daemon_jvm_criteria
 tasks.updateDaemonJvm.configure { jvmVersion = JavaVersion.toVersion(libs.versions.jdk.get()) }

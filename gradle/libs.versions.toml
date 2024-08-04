@@ -54,12 +54,11 @@ glance-appwidget-testing = { module = "androidx.glance:glance-appwidget-testing"
 glance-material = { module = "androidx.glance:glance-material3", version = "1.1.0" }
 glance-testing = { module = "androidx.glance:glance-testing", version = "1.1.0" }
 
-
 junit = { module = "junit:junit", version = "4.13.2" }
 assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
-robolectric = { module = "org.robolectric:robolectric", version = "4.13"}
+robolectric = { module = "org.robolectric:robolectric", version = "4.13" }
 
-kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin"}
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.8.1" }
 

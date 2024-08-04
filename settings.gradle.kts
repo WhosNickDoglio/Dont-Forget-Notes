@@ -43,11 +43,12 @@ dependencyResolutionManagement {
 
 rootProject.name = "Dont-Forget-Notes"
 
-include(":models")
-include(":widget")
-include(":configuration")
-include(":app")
-
+include(
+    ":app",
+    ":configuration",
+    ":models",
+    ":widget",
+)
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
