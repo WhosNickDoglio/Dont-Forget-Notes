@@ -84,9 +84,9 @@ androidx.versionedparcelable:versionedparcelable:1.1.1
 androidx.work:work-runtime-ktx:2.7.1
 androidx.work:work-runtime:2.7.1
 com.google.guava:listenablefuture:1.0
-org.jetbrains.kotlin:kotlin-bom:2.0.0
-org.jetbrains.kotlin:kotlin-stdlib-common:2.0.0
-org.jetbrains.kotlin:kotlin-stdlib:2.0.0
+org.jetbrains.kotlin:kotlin-bom:2.0.10
+org.jetbrains.kotlin:kotlin-stdlib-common:2.0.10
+org.jetbrains.kotlin:kotlin-stdlib:2.0.10
 org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.7
 org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7
 org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1

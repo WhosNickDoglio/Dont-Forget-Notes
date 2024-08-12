@@ -56,7 +56,9 @@ public class ConfigurationActivity : ComponentActivity() {
         setContent {
             BaeNotesTheme {
                 Surface(
-                    modifier = Modifier.fillMaxSize().safeDrawingPadding(),
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .safeDrawingPadding(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     ConfigurationScreen()
@@ -99,22 +101,26 @@ private fun ConfigurationScreen() {
                             note.copy(backgroundColor = event.color)
                         }
                     }
+
                     is NoteEvent.ContentChange -> {
                         configurationState.updateCurrentState<NoteWidgetState> { note ->
                             note.copy(content = event.content)
                         }
                     }
+
                     is NoteEvent.TextColorChange -> {
                         configurationState.updateCurrentState<NoteWidgetState> { note ->
                             note.copy(textColor = event.color)
                         }
                     }
+
                     is NoteEvent.TextSizeDecrement -> {
                         configurationState.updateCurrentState<NoteWidgetState> { note ->
                             val currentTextSize = note.textSize
                             note.copy(textSize = currentTextSize - 2)
                         }
                     }
+
                     is NoteEvent.TextSizeIncrement -> {
                         configurationState.updateCurrentState<NoteWidgetState> { note ->
                             val currentTextSize = note.textSize

@@ -37,21 +37,21 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core)
-    implementation(libs.compose.material)
-    implementation(libs.compose.ui)
-    implementation(libs.glance.appwidget)
-    implementation(libs.glance.material)
-    implementation(libs.glanceTool.configuration)
-    implementation(libs.immutableCollections)
-    implementation(projects.models)
+ implementation(libs.androidx.core)
+ implementation(libs.compose.material)
+ implementation(libs.compose.ui)
+ implementation(libs.glance.appwidget)
+ implementation(libs.glance.material)
+ implementation(libs.glanceTool.configuration)
+ implementation(libs.immutableCollections)
+ implementation(projects.models)
 
-    debugImplementation(libs.glance.preview)
-    debugImplementation(libs.glance.appwidget.preview)
+ debugImplementation(libs.glance.appwidget.preview)
+ debugImplementation(libs.glance.preview)
 
-    testImplementation(libs.assertk)
-    testImplementation(libs.glance.appwidget.testing)
-    testImplementation(libs.glance.testing)
-    testImplementation(libs.junit)
-    testImplementation(libs.robolectric)
+ testImplementation(libs.assertk)
+ testImplementation(libs.glance.appwidget.testing)
+ testImplementation(libs.glance.testing)
+ testImplementation(libs.junit)
+ testImplementation(libs.robolectric)
 }
