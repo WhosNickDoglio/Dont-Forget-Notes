@@ -12,22 +12,23 @@ spotless = "6.25.0"
 sort = "0.8"
 
 [plugins]
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
-dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
+cacheFix = { id = "org.gradle.android.cache-fix", version.ref = "cacheFix" }
+composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
+dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.33.0" }
+doctor = { id = "com.osacky.doctor", version = "0.10.0" }
+gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
-composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
-doctor = { id = "com.osacky.doctor", version = "0.10.0" }
-dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.33.0" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }

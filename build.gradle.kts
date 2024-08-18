@@ -24,17 +24,23 @@
  */
 
 plugins {
+    alias(libs.plugins.dependency.analysis)
+    alias(libs.plugins.dependencyGuard)
+    alias(libs.plugins.doctor)
+    alias(libs.plugins.gradle.versions)
     alias(libs.plugins.android.app) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.android.lint) apply false
+    alias(libs.plugins.cacheFix) apply false
+    alias(libs.plugins.composeGuard) apply false
+    alias(libs.plugins.detekt) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.kotlin.jvm) apply false
-    alias(libs.plugins.composeGuard) apply false
-    alias(libs.plugins.dependencyGuard)
-    alias(libs.plugins.gradle.versions)
-    alias(libs.plugins.dependency.analysis)
-    alias(libs.plugins.doctor)
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.licensee) apply false
+    alias(libs.plugins.spotless) apply false
+    alias(libs.plugins.sortDependencies) apply false
 }
 
 dependencyGuard { configuration("classpath") }
