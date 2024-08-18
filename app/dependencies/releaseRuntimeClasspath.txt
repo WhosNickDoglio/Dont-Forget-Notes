@@ -58,6 +58,7 @@ androidx.glance:glance-appwidget-external-protobuf:1.1.0
 androidx.glance:glance-appwidget-proto:1.1.0
 androidx.glance:glance-appwidget:1.1.0
 androidx.glance:glance-material3:1.1.0
+androidx.glance:glance-preview:1.1.0
 androidx.glance:glance:1.1.0
 androidx.interpolator:interpolator:1.0.0
 androidx.lifecycle:lifecycle-common-java8:2.6.2

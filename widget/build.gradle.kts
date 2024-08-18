@@ -42,12 +42,12 @@ dependencies {
  implementation(libs.compose.ui)
  implementation(libs.glance.appwidget)
  implementation(libs.glance.material)
+ implementation(libs.glance.preview)
  implementation(libs.glanceTool.configuration)
  implementation(libs.immutableCollections)
  implementation(projects.models)
 
  debugImplementation(libs.glance.appwidget.preview)
- debugImplementation(libs.glance.preview)
 
  testImplementation(libs.assertk)
  testImplementation(libs.glance.appwidget.testing)
