@@ -10,6 +10,7 @@ detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "7.0.0.BETA2"
 sort = "0.8"
+dependencyAnalysis = "2.0.1"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -19,7 +20,7 @@ cacheFix = { id = "org.gradle.android.cache-fix", version.ref = "cacheFix" }
 composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
-dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "2.0.1" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 doctor = { id = "com.osacky.doctor", version = "0.10.0" }
 gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -41,6 +42,7 @@ spotless-gradle = { module = "com.diffplug.spotless:spotless-plugin-gradle", ver
 cacheFix-gradle = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version.ref = "cacheFix" }
 sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin", version.ref = "sort" }
 composeGuard-gradle = { module = "com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin", version.ref = "compose-guard" }
+dependencyAnalysis-gradle = { module = "com.autonomousapps:dependency-analysis-gradle-plugin", version.ref = "dependencyAnalysis" }
 
 compose-bom = { module = "androidx.compose:compose-bom", version = "2024.09.02" }
 compose-ui = { module = "androidx.compose.ui:ui" }

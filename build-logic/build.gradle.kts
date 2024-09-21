@@ -109,6 +109,7 @@ dependencies {
     implementation(libs.cacheFix.gradle)
     implementation(libs.composeGuard.gradle)
     implementation(libs.detekt.gradle)
+    implementation(libs.dependencyAnalysis.gradle)
     implementation(libs.kotlin.gradle)
     implementation(libs.sortDependencies.gradle)
     implementation(libs.spotless.gradle)
