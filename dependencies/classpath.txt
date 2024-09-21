@@ -46,10 +46,10 @@ com.android.tools:sdk-common:31.6.1
 com.android.tools:sdklib:31.6.1
 com.android:signflinger:8.6.1
 com.android:zipflinger:8.6.1
-com.autonomousapps.dependency-analysis:com.autonomousapps.dependency-analysis.gradle.plugin:2.0.1
+com.autonomousapps.dependency-analysis:com.autonomousapps.dependency-analysis.gradle.plugin:2.0.2
 com.autonomousapps:antlr:4.10.1.6
 com.autonomousapps:asm-relocated:9.6.0.1
-com.autonomousapps:dependency-analysis-gradle-plugin:2.0.1
+com.autonomousapps:dependency-analysis-gradle-plugin:2.0.2
 com.autonomousapps:graph-support:0.3
 com.diffplug.durian:durian-collect:1.2.0
 com.diffplug.durian:durian-core:1.2.0
@@ -85,9 +85,9 @@ com.googlecode.concurrent-trees:concurrent-trees:2.6.1
 com.googlecode.javaewah:JavaEWAH:1.2.3
 com.googlecode.juniversalchardet:juniversalchardet:1.0.3
 com.gradle:develocity-gradle-plugin-adapters:1.0.2
-com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin:2.2.3-alpha
-com.joetr.compose.guard:core:2.2.3-alpha
-com.joetr.compose.guard:gradle-plugin:2.2.3-alpha
+com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin:2.3.7
+com.joetr.compose.guard:core:2.3.7
+com.joetr.compose.guard:gradle-plugin:2.3.7
 com.osacky.doctor:com.osacky.doctor.gradle.plugin:0.10.0
 com.osacky.doctor:doctor-plugin:0.10.0
 com.squareup.moshi:moshi-adapters:1.15.0
