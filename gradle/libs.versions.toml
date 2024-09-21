@@ -1,12 +1,12 @@
 [versions]
-kotlin = "2.0.10"
-agp = "8.5.2"
+kotlin = "2.0.20"
+agp = "8.6.1"
 glance = "1.1.0"
 compose-guard = "2.2.3-alpha"
 licensee = "1.11.0"
 ktfmt = "0.51"
 jdk = "22"
-detekt = "1.23.6"
+detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "6.25.0"
 sort = "0.8"
@@ -17,9 +17,9 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 cacheFix = { id = "org.gradle.android.cache-fix", version.ref = "cacheFix" }
 composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.6" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
-dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "1.33.0" }
+dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version = "2.0.1" }
 doctor = { id = "com.osacky.doctor", version = "0.10.0" }
 gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -32,7 +32,7 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.1" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.2" }
 
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -42,7 +42,7 @@ cacheFix-gradle = { module = "org.gradle.android.cache-fix:org.gradle.android.ca
 sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin", version.ref = "sort" }
 composeGuard-gradle = { module = "com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin", version.ref = "compose-guard" }
 
-compose-bom = { module = "androidx.compose:compose-bom", version = "2024.06.00" }
+compose-bom = { module = "androidx.compose:compose-bom", version = "2024.09.02" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
@@ -69,6 +69,6 @@ coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-androi
 serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.7.1" }
 immutableCollections = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version = "0.3.7" }
 
-desguar = { module = "com.android.tools:desugar_jdk_libs", version = "2.0.4" }
+desguar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.2" }
 
 lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.3.1" }

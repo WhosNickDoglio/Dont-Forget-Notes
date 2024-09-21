@@ -25,7 +25,6 @@
 
 package dev.whosnickdoglio.baenotes.convention.configurations
 
-import io.gitlab.arturbosch.detekt.Detekt
 import org.gradle.api.Project
 
 internal class LintPluginConfiguration : Configuration {
@@ -34,7 +33,6 @@ internal class LintPluginConfiguration : Configuration {
             pluginManager.apply("io.gitlab.arturbosch.detekt")
             pluginManager.apply("com.squareup.sort-dependencies")
             dependOnBuildLogicTask("detekt")
-            tasks.withType(Detekt::class.java).configureEach { detekt -> detekt.jvmTarget = "17" }
 
             afterEvaluate { // Not sure why I need this?
                 dependOnBuildLogicTask("detektMain")
