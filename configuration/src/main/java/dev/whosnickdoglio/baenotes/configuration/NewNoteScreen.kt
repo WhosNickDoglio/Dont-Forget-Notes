@@ -40,7 +40,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import dev.whosnickdoglio.baenotes.configuration.components.ColorRadioGroup
 import dev.whosnickdoglio.baenotes.configuration.components.TextSizeSelector
 import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
@@ -60,11 +59,15 @@ internal fun NewNoteScreen(
         persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM),
     scrollState: ScrollState = rememberScrollState(),
 ) {
-    Column(modifier = modifier.verticalScroll(scrollState).fillMaxSize()) {
+    Column(modifier = modifier
+        .verticalScroll(scrollState)
+        .fillMaxSize()) {
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
-            modifier = Modifier.fillMaxWidth().padding(12.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
             value = state.content,
             onValueChange = { note -> onEvent(NoteEvent.ContentChange(note)) },
             placeholder = { Text(text = "Note content...") },
@@ -76,7 +79,8 @@ internal fun NewNoteScreen(
             title = "Text Color",
             options = defaultTextColors,
             onSelected = { onEvent(NoteEvent.TextColorChange(it)) },
-            currentSelection = state.textColor)
+            currentSelection = state.textColor
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -84,7 +88,8 @@ internal fun NewNoteScreen(
             title = "Background Color",
             options = defaultBackgroundColors,
             onSelected = { onEvent(NoteEvent.BackgroundColorChange(it)) },
-            currentSelection = state.backgroundColor)
+            currentSelection = state.backgroundColor
+        )
 
         Spacer(modifier = Modifier.height(20.dp))
 

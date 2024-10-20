@@ -1,16 +1,16 @@
 [versions]
-kotlin = "2.0.20"
-agp = "8.6.1"
-glance = "1.1.0"
-compose-guard = "2.3.7"
+kotlin = "2.0.21"
+agp = "8.7.1"
+glance = "1.1.1"
+compose-guard = "2.3.8"
 licensee = "1.11.0"
 ktfmt = "0.52"
 jdk = "22"
 detekt = "1.23.7"
 cacheFix = "3.0.1"
-spotless = "7.0.0.BETA2"
-sort = "0.8"
-dependencyAnalysis = "2.0.2"
+spotless = "7.0.0.BETA3"
+sort = "0.9"
+dependencyAnalysis = "2.2.0"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -33,7 +33,7 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 
 [libraries]
 androidx-core = { module = "androidx.core:core-ktx", version = "1.13.1" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.2" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.9.3" }
 
 detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -44,7 +44,7 @@ sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareu
 composeGuard-gradle = { module = "com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin", version.ref = "compose-guard" }
 dependencyAnalysis-gradle = { module = "com.autonomousapps:dependency-analysis-gradle-plugin", version.ref = "dependencyAnalysis" }
 
-compose-bom = { module = "androidx.compose:compose-bom", version = "2024.09.02" }
+compose-bom = { module = "androidx.compose:compose-bom", version = "2024.10.00" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
@@ -73,4 +73,4 @@ immutableCollections = { module = "org.jetbrains.kotlinx:kotlinx-collections-imm
 
 desguar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.2" }
 
-lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.3.1" }
+lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.4.1" }

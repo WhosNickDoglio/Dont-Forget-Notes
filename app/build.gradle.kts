@@ -88,9 +88,9 @@ android {
 }
 
 dependencies {
-    coreLibraryDesugaring(libs.desguar)
-
     implementation(projects.configuration)
     implementation(projects.models)
     implementation(projects.widget)
+
+    coreLibraryDesugaring(libs.desguar)
 }
