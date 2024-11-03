@@ -43,7 +43,7 @@ import androidx.compose.ui.unit.dp
 import dev.whosnickdoglio.baenotes.configuration.components.ColorRadioGroup
 import dev.whosnickdoglio.baenotes.configuration.components.TextSizeSelector
 import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
-import dev.whosnickdoglio.baenotes.model.Color
+import dev.whosnickdoglio.baenotes.model.NoteColor
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
@@ -53,10 +53,10 @@ internal fun NewNoteScreen(
     state: NoteWidgetState,
     onEvent: (NoteEvent) -> Unit,
     modifier: Modifier = Modifier,
-    defaultTextColors: ImmutableList<Color> =
-        persistentListOf(Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM),
-    defaultBackgroundColors: ImmutableList<Color> =
-        persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM),
+    defaultTextColors: ImmutableList<NoteColor> =
+        persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM),
+    defaultBackgroundColors: ImmutableList<NoteColor> =
+        persistentListOf(NoteColor.TRANSPARENT, NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM),
     scrollState: ScrollState = rememberScrollState(),
 ) {
     Column(modifier = modifier
@@ -105,9 +105,9 @@ internal fun NewNoteScreen(
 internal sealed interface NoteEvent {
     data class ContentChange(val content: String) : NoteEvent
 
-    data class TextColorChange(val color: Color) : NoteEvent
+    data class TextColorChange(val color: NoteColor) : NoteEvent
 
-    data class BackgroundColorChange(val color: Color) : NoteEvent
+    data class BackgroundColorChange(val color: NoteColor) : NoteEvent
 
     data object TextSizeIncrement : NoteEvent
 
