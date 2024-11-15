@@ -23,65 +23,48 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.configuration.components
+package dev.whosnickdoglio.baenotes.configuration.internal.components
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.selectable
-import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
+import androidx.compose.ui.unit.sp
+import dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme
 
 @Composable
-internal fun RadioButtonRow(
-    isSelected: Boolean,
-    title: String,
-    onSelected: () -> Unit,
+internal fun TextSizeSelector(
+    textSize: String,
+    onIncrement: () -> Unit,
+    onDecrement: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Row(
-        modifier =
-            modifier.selectable(
-                selected = isSelected,
-                role = Role.RadioButton,
-                onClick = onSelected
-            )
-    ) {
-        RadioButton(selected = isSelected, onClick = null)
-        Text(text = title)
-    }
-}
+    Column(modifier) {
+        Text(text = "Text Size")
 
-@Preview
-@Composable
-private fun RadioButtonRowUnSelectedPreview() {
-    BaeNotesTheme {
-        Surface(modifier = Modifier.padding(20.dp)) {
-            RadioButtonRow(
-                isSelected = false,
-                title = "My button",
-                onSelected = {},
-            )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Button(onClick = onDecrement) { Text(text = "-") }
+
+            Text(text = textSize, modifier = Modifier.padding(horizontal = 4.dp), fontSize = 20.sp)
+
+            Button(onClick = onIncrement) { Text(text = "+") }
         }
     }
 }
 
 @Preview
 @Composable
-private fun RadioButtonRowSelectedPreview() {
+private fun TextSizeSelectorPreview() {
     BaeNotesTheme {
         Surface(modifier = Modifier.padding(20.dp)) {
-            RadioButtonRow(
-                isSelected = true,
-                title = "My button",
-                onSelected = {},
-            )
+            TextSizeSelector(textSize = "12", onDecrement = {}, onIncrement = {})
         }
     }
 }

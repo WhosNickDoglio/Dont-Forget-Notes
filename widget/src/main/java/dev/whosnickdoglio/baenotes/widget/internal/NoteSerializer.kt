@@ -23,37 +23,38 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.widget
+package dev.whosnickdoglio.baenotes.widget.internal
 
-import android.content.Context
-import androidx.glance.GlanceId
-import androidx.glance.GlanceTheme
-import androidx.glance.appwidget.GlanceAppWidget
-import androidx.glance.appwidget.GlanceAppWidgetReceiver
-import androidx.glance.appwidget.SizeMode
-import androidx.glance.appwidget.provideContent
-import androidx.glance.currentState
-import androidx.glance.state.GlanceStateDefinition
+import androidx.datastore.core.CorruptionException
+import androidx.datastore.core.Serializer
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
-import dev.whosnickdoglio.baenotes.widget.internal.BaeNoteWidgetStateDefinition
-import dev.whosnickdoglio.baenotes.widget.internal.NoteWidget
+import java.io.EOFException
+import java.io.InputStream
+import java.io.OutputStream
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import kotlinx.serialization.json.Json
 
-public object BaeNoteWidget : GlanceAppWidget() {
+internal class NoteSerializer(
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
+) : Serializer<NoteWidgetState> {
 
-    override val stateDefinition: GlanceStateDefinition<*> = BaeNoteWidgetStateDefinition
+    override val defaultValue: NoteWidgetState = NoteWidgetState()
 
-    override val sizeMode: SizeMode = SizeMode.Exact
-
-    override suspend fun provideGlance(context: Context, id: GlanceId) {
-        provideContent {
-            GlanceTheme {
-                val state = currentState<NoteWidgetState>()
-                NoteWidget(state)
-            }
+    override suspend fun readFrom(input: InputStream): NoteWidgetState = withContext(dispatcher) {
+        try {
+            Json.decodeFromString(
+                NoteWidgetState.serializer(), input.readBytes().decodeToString()
+            )
+        } catch (exception: EOFException) {
+            throw CorruptionException("Unable to read Notes", exception)
         }
     }
-}
 
-public class BaeNoteWidgetReceiver : GlanceAppWidgetReceiver() {
-    override val glanceAppWidget: GlanceAppWidget = BaeNoteWidget
+    override suspend fun writeTo(
+        t: NoteWidgetState, output: OutputStream
+    ) = withContext(dispatcher) {
+        output.write(Json.encodeToString(NoteWidgetState.serializer(), t).encodeToByteArray())
+    }
 }

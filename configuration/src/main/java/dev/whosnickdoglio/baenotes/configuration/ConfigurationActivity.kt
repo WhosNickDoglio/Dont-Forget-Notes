@@ -44,7 +44,9 @@ import androidx.compose.ui.Modifier
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
-import dev.whosnickdoglio.baenotes.configuration.theme.BaeNotesTheme
+import dev.whosnickdoglio.baenotes.configuration.internal.NewNoteScreen
+import dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent
+import dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
 import kotlinx.coroutines.launch

@@ -23,7 +23,7 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.configuration.theme
+package dev.whosnickdoglio.baenotes.configuration.internal.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -23,7 +23,7 @@
  *
  */
 
-package dev.whosnickdoglio.baenotes.widget
+package dev.whosnickdoglio.baenotes.widget.internal
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
