@@ -47,10 +47,10 @@ com.android.tools:sdk-common:31.7.2
 com.android.tools:sdklib:31.7.2
 com.android:signflinger:8.7.2
 com.android:zipflinger:8.7.2
-com.autonomousapps.dependency-analysis:com.autonomousapps.dependency-analysis.gradle.plugin:2.4.1
+com.autonomousapps.dependency-analysis:com.autonomousapps.dependency-analysis.gradle.plugin:2.4.2
 com.autonomousapps:antlr:4.10.1.6
 com.autonomousapps:asm-relocated:9.7.1.0
-com.autonomousapps:dependency-analysis-gradle-plugin:2.4.1
+com.autonomousapps:dependency-analysis-gradle-plugin:2.4.2
 com.autonomousapps:graph-support:0.3
 com.diffplug.durian:durian-collect:1.2.0
 com.diffplug.durian:durian-core:1.2.0
@@ -98,12 +98,12 @@ com.squareup.okhttp3:okhttp:4.12.0
 com.squareup.okio:okio-bom:3.9.0
 com.squareup.okio:okio-jvm:3.9.0
 com.squareup.okio:okio:3.9.0
-com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin:0.11
+com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin:0.13
 com.squareup:javapoet:1.10.0
 com.squareup:javawriter:2.5.0
 com.squareup:kotlinpoet-jvm:1.15.1
 com.squareup:kotlinpoet:1.15.1
-com.squareup:sort-dependencies-gradle-plugin:0.11
+com.squareup:sort-dependencies-gradle-plugin:0.13
 com.sun.activation:javax.activation:1.2.0
 com.sun.istack:istack-commons-runtime:3.0.8
 com.sun.xml.fastinfoset:FastInfoset:1.2.16
