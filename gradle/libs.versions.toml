@@ -1,8 +1,8 @@
 [versions]
-kotlin = "2.0.21"
-agp = "8.7.2"
+kotlin = "2.1.0"
+agp = "8.7.3"
 glance = "1.1.1"
-compose-guard = "2.3.8"
+compose-guard = "2.4.0"
 licensee = "1.12.0"
 ktfmt = "0.53"
 jdk = "22"
@@ -10,7 +10,7 @@ detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "7.0.0.BETA4"
 sort = "0.13"
-dependencyAnalysis = "2.4.2"
+dependencyAnalysis = "2.6.0"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -63,7 +63,7 @@ glance-appwidget-preview = { module = "androidx.glance:glance-appwidget-preview"
 
 junit = { module = "junit:junit", version = "4.13.2" }
 assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
-robolectric = { module = "org.robolectric:robolectric", version = "4.14" }
+robolectric = { module = "org.robolectric:robolectric", version = "4.14.1" }
 
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 
