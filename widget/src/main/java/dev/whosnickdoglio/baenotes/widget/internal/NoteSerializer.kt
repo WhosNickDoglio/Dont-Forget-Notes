@@ -48,7 +48,8 @@ internal class NoteSerializer(
                 NoteWidgetState.serializer(), input.readBytes().decodeToString()
             )
         } catch (exception: EOFException) {
-            throw CorruptionException("Unable to read Notes", exception)
+            // fallback to empty note state
+            NoteWidgetState()
         }
     }
 
