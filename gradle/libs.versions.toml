@@ -10,7 +10,7 @@ detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "7.0.0.BETA4"
 sort = "0.13"
-dependencyAnalysis = "2.6.0"
+dependencyAnalysis = "2.6.1"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -44,7 +44,7 @@ sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareu
 composeGuard-gradle = { module = "com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin", version.ref = "compose-guard" }
 dependencyAnalysis-gradle = { module = "com.autonomousapps:dependency-analysis-gradle-plugin", version.ref = "dependencyAnalysis" }
 
-compose-bom = { module = "androidx.compose:compose-bom", version = "2024.11.00" }
+compose-bom = { module = "androidx.compose:compose-bom", version = "2024.12.01" }
 compose-ui = { module = "androidx.compose.ui:ui" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
