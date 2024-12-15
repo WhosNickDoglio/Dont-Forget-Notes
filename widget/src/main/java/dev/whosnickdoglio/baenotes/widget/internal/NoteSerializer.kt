@@ -25,6 +25,7 @@
 
 package dev.whosnickdoglio.baenotes.widget.internal
 
+import android.util.Log
 import androidx.datastore.core.CorruptionException
 import androidx.datastore.core.Serializer
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
@@ -48,6 +49,8 @@ internal class NoteSerializer(
                 NoteWidgetState.serializer(), input.readBytes().decodeToString()
             )
         } catch (exception: EOFException) {
+            // When this is ready for the apps store we'll replace with Bugsnag?
+            Log.e("NoteSerializer", "Oops", exception)
             // fallback to empty note state
             NoteWidgetState()
         }
