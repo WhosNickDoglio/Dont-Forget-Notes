@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.1.0"
-agp = "8.7.3"
+kotlin = "2.1.10"
+agp = "8.9.0"
 glance = "1.1.1"
 compose-guard = "2.4.0"
 licensee = "1.12.0"
@@ -8,7 +8,7 @@ ktfmt = "0.53"
 jdk = "22"
 detekt = "1.23.7"
 cacheFix = "3.0.1"
-spotless = "7.0.0.BETA4"
+spotless = "7.0.2"
 sort = "0.13"
 dependencyAnalysis = "2.6.1"
 
