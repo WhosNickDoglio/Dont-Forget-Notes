@@ -10,7 +10,7 @@ detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "7.0.2"
 sort = "0.13"
-dependencyAnalysis = "2.6.1"
+dependencyAnalysis = "2.13.0"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
