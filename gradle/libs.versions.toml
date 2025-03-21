@@ -9,7 +9,7 @@ jdk = "22"
 detekt = "1.23.7"
 cacheFix = "3.0.1"
 spotless = "7.0.2"
-sort = "0.13"
+sort = "0.14"
 dependencyAnalysis = "2.6.1"
 
 [plugins]
