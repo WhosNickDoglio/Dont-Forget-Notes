@@ -3,14 +3,14 @@ kotlin = "2.1.20"
 agp = "8.9.0"
 glance = "1.1.1"
 compose-guard = "2.4.0"
-licensee = "1.12.0"
+licensee = "1.13.0"
 ktfmt = "0.53"
 jdk = "22"
-detekt = "1.23.7"
+detekt = "1.23.8"
 cacheFix = "3.0.1"
 spotless = "7.0.2"
-sort = "0.13"
-dependencyAnalysis = "2.6.1"
+sort = "0.14"
+dependencyAnalysis = "2.13.0"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -22,7 +22,7 @@ detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 doctor = { id = "com.osacky.doctor", version = "0.10.0" }
-gradle-versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
+gradle-versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
