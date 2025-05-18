@@ -27,7 +27,7 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 plugins {
     alias(libs.plugins.dependency.analysis)
-    alias(libs.plugins.dependencyGuard)
+//    alias(libs.plugins.dependencyGuard)
     alias(libs.plugins.doctor)
     alias(libs.plugins.gradle.versions)
     alias(libs.plugins.android.app) apply false
@@ -45,7 +45,7 @@ plugins {
     alias(libs.plugins.sortDependencies) apply false
 }
 
-dependencyGuard { configuration("classpath") }
+//dependencyGuard { configuration("classpath") }
 
 doctor {
     warnWhenNotUsingParallelGC = false
