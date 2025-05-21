@@ -27,14 +27,28 @@
 <issues format="6" by="lint 8.10.0" type="baseline" client="gradle" dependencies="false" name="AGP (8.10.0)" variant="all" version="8.10.0">
 
     <issue
-        id="AndroidGradlePluginVersion"
-        message="A newer version of Gradle than 8.13 is available: 8.14"
-        errorLine1="distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-bin.zip"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcher_background` appears to be unused">
         <location
-            file="$HOME/Projects/BaeNotes/gradle/wrapper/gradle-wrapper.properties"
-            line="28"
-            column="17"/>
+            file="src/main/res/mipmap-hdpi/ic_launcher_background.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused"
+        errorLine1="&lt;vector"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_launcher_background.xml"
+            line="27"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.mipmap.ic_launcher_foreground` appears to be unused">
+        <location
+            file="src/main/res/mipmap-hdpi/ic_launcher_foreground.png"/>
     </issue>
 
     <issue
@@ -50,9 +64,9 @@
 
     <issue
         id="UnusedResources"
-        message="The resource `R.mipmap.ic_launcher_round` appears to be unused">
+        message="The resource `R.mipmap.ic_launcher_monochrome` appears to be unused">
         <location
-            file="src/main/res/mipmap-hdpi/ic_launcher_round.webp"/>
+            file="src/main/res/mipmap-hdpi/ic_launcher_monochrome.png"/>
     </issue>
 
 </issues>
