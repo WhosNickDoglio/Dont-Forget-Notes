@@ -31,6 +31,5 @@
     android:minHeight="100dp"
     android:minResizeWidth="40dp"
     android:minResizeHeight="40dp"
-    android:previewImage="@drawable/ic_launcher_background"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen" />
