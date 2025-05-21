@@ -76,7 +76,14 @@ android {
         jvmTarget = NotesConfiguration.javaVersion.toString()
     }
     lint {
-        disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
+        disable.addAll(
+            setOf(
+                "GradleDependency",
+                "ObsoleteLintCustomCheck",
+                "OldTargetApi",
+                "AndroidGradlePluginVersion",
+            )
+        )
         htmlReport = false
         xmlReport = false
         textReport = true
