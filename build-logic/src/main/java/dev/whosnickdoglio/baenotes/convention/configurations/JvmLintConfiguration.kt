@@ -34,7 +34,14 @@ internal class JvmLintConfiguration : Configuration {
             pluginManager.apply("com.android.lint")
             dependOnBuildLogicTask("lint")
             extensions.getByType(Lint::class.java).run {
-                disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck", "OldTargetApi"))
+                disable.addAll(
+                    setOf(
+                        "GradleDependency",
+                        "ObsoleteLintCustomCheck",
+                        "OldTargetApi",
+                        "AndroidGradlePluginVersion"
+                    )
+                )
                 htmlReport = false
                 xmlReport = false
                 textReport = true

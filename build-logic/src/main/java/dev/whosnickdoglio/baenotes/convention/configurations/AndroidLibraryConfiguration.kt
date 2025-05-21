@@ -44,7 +44,14 @@ internal class AndroidLibraryConfiguration : Configuration {
                     targetCompatibility = NotesConfiguration.javaVersion
                 }
                 lint {
-                    disable.addAll(setOf("GradleDependency", "ObsoleteLintCustomCheck"))
+                    disable.addAll(
+                        setOf(
+                            "GradleDependency",
+                            "ObsoleteLintCustomCheck",
+                            "OldTargetApi",
+                            "AndroidGradlePluginVersion"
+                        )
+                    )
                     htmlReport = false
                     xmlReport = false
                     textReport = true
