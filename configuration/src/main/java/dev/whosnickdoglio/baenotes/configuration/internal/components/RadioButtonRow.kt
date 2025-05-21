@@ -32,6 +32,10 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
@@ -60,27 +64,14 @@ internal fun RadioButtonRow(
 
 @Preview
 @Composable
-private fun RadioButtonRowUnSelectedPreview() {
+private fun RadioButtonRowPreview() {
+    var selected by remember { mutableStateOf(false) }
     BaeNotesTheme {
         Surface(modifier = Modifier.padding(20.dp)) {
             RadioButtonRow(
-                isSelected = false,
+                isSelected = selected,
                 title = "My button",
-                onSelected = {},
-            )
-        }
-    }
-}
-
-@Preview
-@Composable
-private fun RadioButtonRowSelectedPreview() {
-    BaeNotesTheme {
-        Surface(modifier = Modifier.padding(20.dp)) {
-            RadioButtonRow(
-                isSelected = true,
-                title = "My button",
-                onSelected = {},
+                onSelected = { selected = !selected },
             )
         }
     }
