@@ -39,7 +39,7 @@ internal class JvmLintConfiguration : Configuration {
                         "GradleDependency",
                         "ObsoleteLintCustomCheck",
                         "OldTargetApi",
-                        "AndroidGradlePluginVersion"
+                        "AndroidGradlePluginVersion",
                     )
                 )
                 htmlReport = false

@@ -49,7 +49,7 @@ internal class AndroidLibraryConfiguration : Configuration {
                             "GradleDependency",
                             "ObsoleteLintCustomCheck",
                             "OldTargetApi",
-                            "AndroidGradlePluginVersion"
+                            "AndroidGradlePluginVersion",
                         )
                     )
                     htmlReport = false
