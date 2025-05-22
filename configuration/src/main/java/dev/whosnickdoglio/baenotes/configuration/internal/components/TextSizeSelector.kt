@@ -66,6 +66,7 @@ internal fun TextSizeSelector(
 @Preview
 @Composable
 private fun TextSizeSelectorPreview() {
+    @Suppress("MagicNumber")
     var textSize by remember { mutableIntStateOf(12) }
 
     BaeNotesTheme {
