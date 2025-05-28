@@ -8,7 +8,7 @@ ktfmt = "0.53"
 jdk = "23"
 detekt = "1.23.8"
 cacheFix = "3.0.1"
-spotless = "7.0.3"
+spotless = "7.0.4"
 sort = "0.14"
 dependencyAnalysis = "2.17.0"
 
