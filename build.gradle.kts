@@ -48,6 +48,7 @@ plugins {
 //dependencyGuard { configuration("classpath") }
 
 doctor {
+    @Suppress("DEPRECATION")
     warnWhenNotUsingParallelGC = false
     javaHome { failOnError = false }
 }
