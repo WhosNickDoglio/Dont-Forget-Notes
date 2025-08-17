@@ -1,4 +1,5 @@
 import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 /*
  * MIT License
@@ -32,6 +33,13 @@ plugins {
 }
 
 // dependencyGuard { configuration("releaseRuntimeClasspath") }
+
+kotlin {
+    compilerOptions {
+        allWarningsAsErrors = true
+        jvmTarget = JvmTarget.fromTarget(NotesConfiguration.javaVersion.toString())
+    }
+}
 
 licensee {
     allow("Apache-2.0")
@@ -70,10 +78,6 @@ android {
         isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = NotesConfiguration.javaVersion
         targetCompatibility = NotesConfiguration.javaVersion
-    }
-    kotlinOptions {
-        allWarningsAsErrors = true
-        jvmTarget = NotesConfiguration.javaVersion.toString()
     }
     lint {
         disable.addAll(
