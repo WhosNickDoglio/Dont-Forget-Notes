@@ -37,7 +37,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots")
+        maven(url = "https://central.sonatype.com/repository/maven-snapshots/")
     }
 }
 
@@ -64,10 +64,3 @@ include(
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-
-includeBuild("glance-experimental-tools") {
-    dependencySubstitution {
-        substitute(module("com.google.android.glance.tools:appwidget-configuration"))
-            .using(project(":appwidget-configuration"))
-    }
-}
