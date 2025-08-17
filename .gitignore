@@ -153,3 +153,4 @@ google-services.json
 
 # Kotlin build directory introduced in K2, see https://kotlinlang.org/docs/whatsnew-eap.html#new-directory-for-kotlin-data-in-gradle-projects
 /.kotlin/
+/keystore.jks
