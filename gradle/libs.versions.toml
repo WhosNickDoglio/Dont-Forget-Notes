@@ -53,7 +53,7 @@ compose-runtime = { module = "androidx.compose.runtime:runtime" }
 compose-material = { module = "androidx.compose.material3:material3" }
 compose-colorpicker = { module = "com.github.skydoves:colorpicker-compose", version = "1.1.2" }
 
-glanceTool-configuration = { module = "com.google.android.glance.tools:appwidget-configuration" }
+glanceTool-configuration = { module = "dev.whosnickdoglio:appwidget-configuration", version = "0.3.0-SNAPSHOT" }
 glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glance" }
 glance-appwidget-testing = { module = "androidx.glance:glance-appwidget-testing", version.ref = "glance" }
 glance-material = { module = "androidx.glance:glance-material3", version.ref = "glance" }
