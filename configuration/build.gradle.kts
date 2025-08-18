@@ -32,7 +32,6 @@ android { namespace = "dev.whosnickdoglio.baenotes.configuration" }
 
 dependencies {
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.core)
     implementation(libs.compose.material)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)

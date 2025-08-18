@@ -37,14 +37,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core)
-    implementation(libs.compose.material)
-    implementation(libs.compose.ui)
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material)
     implementation(libs.glance.preview)
     implementation(libs.glanceTool.configuration)
-    implementation(libs.immutableCollections)
     implementation(projects.models)
 
     debugImplementation(libs.glance.appwidget.preview)
