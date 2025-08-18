@@ -99,6 +99,8 @@ android {
 }
 
 dependencies {
+    implementation(platform(libs.compose.bom))
+    implementation(platform(libs.kotlin.bom))
     implementation(projects.configuration)
     implementation(projects.models)
     implementation(projects.widget)
