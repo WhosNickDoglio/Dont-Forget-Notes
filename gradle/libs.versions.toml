@@ -21,7 +21,7 @@ composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
-doctor = { id = "com.osacky.doctor", version = "0.11.0" }
+doctor = { id = "com.osacky.doctor", version = "0.12.0" }
 gradle-versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
