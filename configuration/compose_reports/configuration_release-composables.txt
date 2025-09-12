@@ -3,16 +3,16 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun NewNoteSc
   stable state: NoteWidgetState
   stable onEvent: Function1<NoteEvent, Unit>
   stable modifier: Modifier? = @static Companion
-  stable defaultTextColors: ImmutableList<Color>? = @static persistentListOf(Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM)
-  stable defaultBackgroundColors: ImmutableList<Color>? = @static persistentListOf(Color.TRANSPARENT, Color.BLACK, Color.WHITE, Color.PINK, Color.SYSTEM)
+  stable defaultTextColors: ImmutableList<NoteColor>? = @static persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM)
+  stable defaultBackgroundColors: ImmutableList<NoteColor>? = @static persistentListOf(NoteColor.TRANSPARENT, NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM)
   stable scrollState: ScrollState? = @dynamic rememberScrollState(0, $composer, 0, 0b0001)
 )
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun PreviewNewNoteScreen()
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun ColorRadioGroup(
   stable title: String
-  stable options: ImmutableList<Color>
-  stable currentSelection: Color
-  stable onSelected: Function1<Color, Unit>
+  stable options: ImmutableList<NoteColor>
+  stable currentSelection: NoteColor
+  stable onSelected: Function1<NoteColor, Unit>
   stable modifier: Modifier? = @static Companion
 )
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun ColorRadioGroupPreview()
@@ -22,8 +22,7 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButt
   stable onSelected: Function0<Unit>
   stable modifier: Modifier? = @static Companion
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButtonRowUnSelectedPreview()
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButtonRowSelectedPreview()
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButtonRowPreview()
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun TextSizeSelector(
   stable textSize: String
   stable onIncrement: Function0<Unit>

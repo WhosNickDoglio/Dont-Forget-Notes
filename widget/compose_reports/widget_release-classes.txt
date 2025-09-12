@@ -5,8 +5,13 @@ unstable class BaeNoteWidget {
 }
 runtime class BaeNoteWidgetReceiver {
   runtime val glanceAppWidget: GlanceAppWidget
-  <runtime stability> = Runtime(GlanceAppWidget)
+  <runtime stability> = Runtime(GlanceAppWidgetReceiver),Runtime(GlanceAppWidget)
 }
 stable class BaeNoteWidgetStateDefinition {
   <runtime stability> = Stable
+}
+unstable class NoteSerializer {
+  unstable val dispatcher: CoroutineDispatcher
+  stable val defaultValue: NoteWidgetState
+  <runtime stability> = Unstable
 }

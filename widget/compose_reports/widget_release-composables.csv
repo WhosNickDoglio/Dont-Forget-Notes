@@ -1,2 +1,3 @@
 package,name,composable,skippable,restartable,readonly,inline,isLambda,hasDefaults,defaultsGroup,groups,calls,
-dev.whosnickdoglio.baenotes.widget.NoteWidget,NoteWidget,1,1,1,0,0,0,0,0,1,2,
+dev.whosnickdoglio.baenotes.widget.internal.NoteWidget,NoteWidget,1,1,1,0,0,0,0,0,1,2,
+dev.whosnickdoglio.baenotes.widget.internal.PreviewNoteWidget,PreviewNoteWidget,1,1,1,0,0,0,0,0,1,1,
