@@ -1,5 +1,5 @@
-restartable skippable scheme("[androidx.glance.GlanceComposable]") fun NoteWidget(
+restartable skippable scheme("[androidx.glance.GlanceComposable]") fun dev.whosnickdoglio.baenotes.widget.internal.NoteWidget(
   stable state: NoteWidgetState
-  stable modifier: GlanceModifier? = @static Companion
+  stable modifier: GlanceModifier? = @static <expression>
 )
-restartable skippable scheme("[androidx.glance.GlanceComposable]") fun PreviewNoteWidget()
+restartable skippable scheme("[androidx.glance.GlanceComposable]") fun dev.whosnickdoglio.baenotes.widget.internal.PreviewNoteWidget()

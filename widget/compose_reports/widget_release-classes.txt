@@ -1,16 +1,16 @@
-unstable class BaeNoteWidget {
+unstable class dev.whosnickdoglio.baenotes.widget.BaeNoteWidget {
   unstable val stateDefinition: GlanceStateDefinition<*>
   unstable val sizeMode: SizeMode
   <runtime stability> = Unstable
 }
-runtime class BaeNoteWidgetReceiver {
+runtime class dev.whosnickdoglio.baenotes.widget.BaeNoteWidgetReceiver {
   runtime val glanceAppWidget: GlanceAppWidget
   <runtime stability> = Runtime(GlanceAppWidgetReceiver),Runtime(GlanceAppWidget)
 }
-stable class BaeNoteWidgetStateDefinition {
+stable class dev.whosnickdoglio.baenotes.widget.internal.BaeNoteWidgetStateDefinition {
   <runtime stability> = Stable
 }
-unstable class NoteSerializer {
+unstable class dev.whosnickdoglio.baenotes.widget.internal.NoteSerializer {
   unstable val dispatcher: CoroutineDispatcher
   stable val defaultValue: NoteWidgetState
   <runtime stability> = Unstable

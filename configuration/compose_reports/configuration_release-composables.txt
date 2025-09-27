@@ -1,37 +1,37 @@
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun ConfigurationScreen()
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun NewNoteScreen(
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.ConfigurationScreen()
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.NewNoteScreen(
   stable state: NoteWidgetState
   stable onEvent: Function1<NoteEvent, Unit>
-  stable modifier: Modifier? = @static Companion
-  stable defaultTextColors: ImmutableList<NoteColor>? = @static persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM)
-  stable defaultBackgroundColors: ImmutableList<NoteColor>? = @static persistentListOf(NoteColor.TRANSPARENT, NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM)
-  stable scrollState: ScrollState? = @dynamic rememberScrollState(0, $composer, 0, 0b0001)
+  stable modifier: Modifier? = @static <expression>
+  stable defaultTextColors: ImmutableList<NoteColor>? = @static <expression>
+  stable defaultBackgroundColors: ImmutableList<NoteColor>? = @static <expression>
+  stable scrollState: ScrollState? = @dynamic <expression>
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun PreviewNewNoteScreen()
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun ColorRadioGroup(
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.PreviewNewNoteScreen()
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.ColorRadioGroup(
   stable title: String
   stable options: ImmutableList<NoteColor>
   stable currentSelection: NoteColor
   stable onSelected: Function1<NoteColor, Unit>
-  stable modifier: Modifier? = @static Companion
+  stable modifier: Modifier? = @static <expression>
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun ColorRadioGroupPreview()
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButtonRow(
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.ColorRadioGroupPreview()
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.RadioButtonRow(
   stable isSelected: Boolean
   stable title: String
   stable onSelected: Function0<Unit>
-  stable modifier: Modifier? = @static Companion
+  stable modifier: Modifier? = @static <expression>
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun RadioButtonRowPreview()
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun TextSizeSelector(
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.RadioButtonRowPreview()
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.TextSizeSelector(
   stable textSize: String
   stable onIncrement: Function0<Unit>
   stable onDecrement: Function0<Unit>
-  stable modifier: Modifier? = @static Companion
+  stable modifier: Modifier? = @static <expression>
 )
-restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun TextSizeSelectorPreview()
-restartable skippable scheme("[0, [0]]") fun BaeNotesTheme(
-  stable darkTheme: Boolean = @dynamic isSystemInDarkTheme($composer, 0)
+restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.TextSizeSelectorPreview()
+restartable skippable scheme("[0, [0]]") fun dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme(
+  stable darkTheme: Boolean = @dynamic <expression>
   stable dynamicColor: Boolean = @static true
   stable content: Function2<Composer, Int, Unit>
 )

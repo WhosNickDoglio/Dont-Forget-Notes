@@ -1,21 +1,21 @@
-unstable class ConfigurationActivity {
+unstable class dev.whosnickdoglio.baenotes.configuration.ConfigurationActivity {
   <runtime stability> = Unstable
 }
-stable class ContentChange {
+stable class dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent.ContentChange {
   stable val content: String
   <runtime stability> = Stable
 }
-stable class TextColorChange {
+stable class dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent.TextColorChange {
   stable val color: NoteColor
   <runtime stability> = Stable
 }
-stable class BackgroundColorChange {
+stable class dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent.BackgroundColorChange {
   stable val color: NoteColor
   <runtime stability> = Stable
 }
-stable class TextSizeIncrement {
+stable class dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent.TextSizeIncrement {
   <runtime stability> = Stable
 }
-stable class TextSizeDecrement {
+stable class dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent.TextSizeDecrement {
   <runtime stability> = Stable
 }
