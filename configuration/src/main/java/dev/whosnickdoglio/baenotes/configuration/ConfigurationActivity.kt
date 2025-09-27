@@ -31,8 +31,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeDrawingPadding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Done
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -41,6 +39,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
@@ -88,11 +87,15 @@ private fun ConfigurationScreen() {
             FloatingActionButton(
                 onClick = { scope.launch { configurationState.applyConfiguration() } }
             ) {
-                Icon(imageVector = Icons.Rounded.Done, contentDescription = "Save changes")
+                Icon(
+                    painter = painterResource(R.drawable.done_check),
+                    contentDescription = "Save changes"
+                )
             }
         }
     ) {
-        val currentState = configurationState.getCurrentState<NoteWidgetState>() ?: NoteWidgetState()
+        val currentState =
+            configurationState.getCurrentState<NoteWidgetState>() ?: NoteWidgetState()
 
         NewNoteScreen(
             state = currentState,
