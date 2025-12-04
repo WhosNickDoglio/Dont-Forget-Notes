@@ -1,3 +1,6 @@
+// Copyright (C) 2025 Nicholas Doglio
+// SPDX-License-Identifier: MIT
+
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 /*

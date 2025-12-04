@@ -1,3 +1,6 @@
+// Copyright (C) 2025 Nicholas Doglio
+// SPDX-License-Identifier: MIT
+
 import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
