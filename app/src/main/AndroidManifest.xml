@@ -14,7 +14,7 @@
         android:theme="@style/Theme.BaeNotes"
         tools:targetApi="31">
         <receiver
-            android:name=".widget.BaeNoteWidgetReceiver"
+            android:name="dev.whosnickdoglio.baenotes.widget.BaeNoteWidgetReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: MIT
 
 pluginManagement {
-    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven(url = "https://central.sonatype.com/repository/maven-snapshots/")
     }
 }
 

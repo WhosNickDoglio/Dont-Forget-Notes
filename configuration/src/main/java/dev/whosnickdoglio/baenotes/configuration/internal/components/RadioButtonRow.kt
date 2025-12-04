@@ -32,7 +32,7 @@ internal fun RadioButtonRow(
             modifier.selectable(
                 selected = isSelected,
                 role = Role.RadioButton,
-                onClick = onSelected
+                onClick = onSelected,
             )
     ) {
         RadioButton(selected = isSelected, onClick = null)

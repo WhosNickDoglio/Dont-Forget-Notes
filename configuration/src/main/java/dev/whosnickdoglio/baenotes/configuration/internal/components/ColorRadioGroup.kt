@@ -34,7 +34,7 @@ internal fun ColorRadioGroup(
             RadioButtonRow(
                 isSelected = it == currentSelection,
                 title = it.toString(),
-                onSelected = { onSelected(it) }
+                onSelected = { onSelected(it) },
             )
         }
     }
@@ -50,7 +50,7 @@ private fun ColorRadioGroupPreview() {
                 title = "Colors",
                 options = persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK),
                 currentSelection = selection,
-                onSelected = { selection = it }
+                onSelected = { selection = it },
             )
         }
     }

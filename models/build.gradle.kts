@@ -2,11 +2,14 @@
 // SPDX-License-Identifier: MIT
 
 plugins {
-    id("convention.kotlin")
+    alias(libs.plugins.convention.jvm)
     alias(libs.plugins.kotlin.serialization)
 }
 
 dependencies {
     api(libs.serialization)
+
+    implementation(platform(libs.compose.bom))
+    implementation(platform(libs.kotlin.bom))
     implementation(libs.compose.runtime)
 }
