@@ -34,18 +34,20 @@ internal fun NewNoteScreen(
     defaultTextColors: ImmutableList<NoteColor> =
         persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM),
     defaultBackgroundColors: ImmutableList<NoteColor> =
-        persistentListOf(NoteColor.TRANSPARENT, NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK, NoteColor.SYSTEM),
+        persistentListOf(
+            NoteColor.TRANSPARENT,
+            NoteColor.BLACK,
+            NoteColor.WHITE,
+            NoteColor.PINK,
+            NoteColor.SYSTEM,
+        ),
     scrollState: ScrollState = rememberScrollState(),
 ) {
-    Column(modifier = modifier
-        .verticalScroll(scrollState)
-        .fillMaxSize()) {
+    Column(modifier = modifier.verticalScroll(scrollState).fillMaxSize()) {
         Spacer(modifier = Modifier.height(20.dp))
 
         OutlinedTextField(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp),
+            modifier = Modifier.fillMaxWidth().padding(12.dp),
             value = state.content,
             onValueChange = { note -> onEvent(NoteEvent.ContentChange(note)) },
             placeholder = { Text(text = "Note content...") },
@@ -57,7 +59,7 @@ internal fun NewNoteScreen(
             title = "Text Color",
             options = defaultTextColors,
             onSelected = { onEvent(NoteEvent.TextColorChange(it)) },
-            currentSelection = state.textColor
+            currentSelection = state.textColor,
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -66,7 +68,7 @@ internal fun NewNoteScreen(
             title = "Background Color",
             options = defaultBackgroundColors,
             onSelected = { onEvent(NoteEvent.BackgroundColorChange(it)) },
-            currentSelection = state.backgroundColor
+            currentSelection = state.backgroundColor,
         )
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -74,7 +76,8 @@ internal fun NewNoteScreen(
         TextSizeSelector(
             textSize = state.textSize.toString(),
             onDecrement = { onEvent(NoteEvent.TextSizeDecrement) },
-            onIncrement = { onEvent(NoteEvent.TextSizeIncrement) })
+            onIncrement = { onEvent(NoteEvent.TextSizeIncrement) },
+        )
 
         Spacer(modifier = Modifier.height(40.dp))
     }
