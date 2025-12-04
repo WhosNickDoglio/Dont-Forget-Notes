@@ -6,7 +6,7 @@
     <application>
 
         <activity
-            android:name=".ConfigurationActivity"
+            android:name="dev.whosnickdoglio.baenotes.configuration.ConfigurationActivity"
             android:exported="true"
             android:theme="@style/Theme.BaeNotes"
             android:windowSoftInputMode="adjustResize">

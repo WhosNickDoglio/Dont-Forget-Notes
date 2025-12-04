@@ -21,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.glance.appwidget.ExperimentalGlanceRemoteViewsApi
 import com.google.android.glance.appwidget.configuration.AppWidgetConfigurationScaffold
 import com.google.android.glance.appwidget.configuration.rememberAppWidgetConfigurationState
+import configuration.R
 import dev.whosnickdoglio.baenotes.configuration.internal.NewNoteScreen
 import dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent
 import dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme
@@ -35,10 +36,8 @@ public class ConfigurationActivity : ComponentActivity() {
         setContent {
             BaeNotesTheme {
                 Surface(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .safeDrawingPadding(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxSize().safeDrawingPadding(),
+                    color = MaterialTheme.colorScheme.background,
                 ) {
                     ConfigurationScreen()
                 }
@@ -67,10 +66,10 @@ private fun ConfigurationScreen() {
             ) {
                 Icon(
                     painter = painterResource(R.drawable.done_check),
-                    contentDescription = "Save changes"
+                    contentDescription = "Save changes",
                 )
             }
-        }
+        },
     ) {
         val currentState =
             configurationState.getCurrentState<NoteWidgetState>() ?: NoteWidgetState()
@@ -111,7 +110,7 @@ private fun ConfigurationScreen() {
                         }
                     }
                 }
-            }
+            },
         )
     }
 }

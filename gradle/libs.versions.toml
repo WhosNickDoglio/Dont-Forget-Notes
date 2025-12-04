@@ -1,24 +1,31 @@
 [versions]
+min-sdk = "30"
+target-sdk = "36"
+compile-sdk = "36"
 kotlin = "2.3.0"
 agp = "8.13.2"
 glance = "1.1.1"
 compose-guard = "2.4.0"
 licensee = "1.14.1"
 ktfmt = "0.59"
-jdk = "24"
-detekt = "1.23.8"
+jdk = "25"
+jdkTarget = "17"
 cacheFix = "3.0.3"
-spotless = "8.1.0"
 sort = "0.16"
 dependencyAnalysis = "3.5.1"
+convention-plugin = "0.3.0"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 android-lint = { id = "com.android.lint", version.ref = "agp" }
 cacheFix = { id = "org.gradle.android.cache-fix", version.ref = "cacheFix" }
+convention-app = { id = "dev.whosnickdoglio.convention.android.app", version.ref = "convention-plugin" }
+convention-android-library = { id = "dev.whosnickdoglio.convention.android.library", version.ref = "convention-plugin" }
+convention-jvm = { id = "dev.whosnickdoglio.convention.kotlin", version.ref = "convention-plugin" }
+convention-kmp = { id = "dev.whosnickdoglio.convention.kmp", version.ref = "convention-plugin" }
 composeGuard = { id = "com.joetr.compose.guard", version.ref = "compose-guard" }
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+detekt = { id = "dev.detekt", version = "2.0.0-alpha.1" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version = "0.5.0" }
 dependency-analysis = { id = "com.autonomousapps.dependency-analysis", version.ref = "dependencyAnalysis" }
 doctor = { id = "com.osacky.doctor", version = "0.12.1" }
@@ -29,19 +36,10 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.25.0"}
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.12.2" }
-
-detekt-gradle = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
-android-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
-kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
-spotless-gradle = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
-cacheFix-gradle = { module = "org.gradle.android.cache-fix:org.gradle.android.cache-fix.gradle.plugin", version.ref = "cacheFix" }
-sortDependencies-gradle = { module = "com.squareup.sort-dependencies:com.squareup.sort-dependencies.gradle.plugin", version.ref = "sort" }
-composeGuard-gradle = { module = "com.joetr.compose.guard:com.joetr.compose.guard.gradle.plugin", version.ref = "compose-guard" }
-dependencyAnalysis-gradle = { module = "com.autonomousapps:dependency-analysis-gradle-plugin", version.ref = "dependencyAnalysis" }
 
 compose-bom = { module = "androidx.compose:compose-bom", version = "2025.12.01" }
 compose-ui = { module = "androidx.compose.ui:ui" }
@@ -65,9 +63,6 @@ assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
 robolectric = { module = "org.robolectric:robolectric", version = "4.16" }
 
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
-
-# Only present to trigger automatic renovate updates
-ktfmt = { module = "com.facebook:ktfmt", version.ref = "ktfmt" }
 
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version = "1.10.2" }
 

@@ -17,13 +17,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme
 import dev.whosnickdoglio.baenotes.model.NoteColor
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 internal fun ColorRadioGroup(
     title: String,
-    options: ImmutableList<NoteColor>,
+    options: List<NoteColor>,
     currentSelection: NoteColor,
     onSelected: (NoteColor) -> Unit,
     modifier: Modifier = Modifier,
@@ -34,7 +32,7 @@ internal fun ColorRadioGroup(
             RadioButtonRow(
                 isSelected = it == currentSelection,
                 title = it.toString(),
-                onSelected = { onSelected(it) }
+                onSelected = { onSelected(it) },
             )
         }
     }
@@ -48,9 +46,9 @@ private fun ColorRadioGroupPreview() {
         Surface(modifier = Modifier.padding(20.dp)) {
             ColorRadioGroup(
                 title = "Colors",
-                options = persistentListOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK),
+                options = listOf(NoteColor.BLACK, NoteColor.WHITE, NoteColor.PINK),
                 currentSelection = selection,
-                onSelected = { selection = it }
+                onSelected = { selection = it },
             )
         }
     }
