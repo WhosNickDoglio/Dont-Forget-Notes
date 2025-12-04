@@ -1,22 +1,9 @@
 // Copyright (C) 2025 Nicholas Doglio
 // SPDX-License-Identifier: MIT
 
-import dev.whosnickdoglio.baenotes.convention.configurations.NotesConfiguration
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
-    id("convention.app")
+    alias(libs.plugins.convention.app)
     alias(libs.plugins.licensee)
-    //    alias(libs.plugins.dependencyGuard)
-}
-
-// dependencyGuard { configuration("releaseRuntimeClasspath") }
-
-kotlin {
-    compilerOptions {
-        allWarningsAsErrors = true
-        jvmTarget = JvmTarget.fromTarget(NotesConfiguration.javaVersion.toString())
-    }
 }
 
 licensee {
@@ -26,24 +13,12 @@ licensee {
 }
 
 android {
-    namespace = "dev.whosnickdoglio.baenotes"
-    compileSdk = NotesConfiguration.COMPILE_SDK
-
-    defaultConfig {
-        applicationId = "dev.whosnickdoglio.baenotes"
-        minSdk = NotesConfiguration.MIN_SDK
-        targetSdk = NotesConfiguration.TARGET_SDK
-        versionCode = 1
-        versionName = "0.1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables { useSupportLibrary = true }
-    }
+    defaultConfig { applicationId = "dev.whosnickdoglio.baenotes" }
 
     buildTypes {
-        named("release") {
+        release {
             isMinifyEnabled = true
-            isDebuggable = false
+            isShrinkResources = true
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -51,28 +26,6 @@ android {
                 )
             )
         }
-    }
-    compileOptions {
-        isCoreLibraryDesugaringEnabled = true
-        sourceCompatibility = NotesConfiguration.javaVersion
-        targetCompatibility = NotesConfiguration.javaVersion
-    }
-    lint {
-        disable.addAll(
-            setOf(
-                "GradleDependency",
-                "ObsoleteLintCustomCheck",
-                "OldTargetApi",
-                "AndroidGradlePluginVersion",
-            )
-        )
-        htmlReport = false
-        xmlReport = false
-        textReport = true
-        absolutePaths = false
-        checkTestSources = true
-        warningsAsErrors = true
-        baseline = project.file("lint-baseline.xml")
     }
 }
 
@@ -84,4 +37,6 @@ dependencies {
     implementation(projects.widget)
 
     coreLibraryDesugaring(libs.desguar)
+
+    lintChecks(libs.lints.compose)
 }

@@ -2,16 +2,21 @@
 // SPDX-License-Identifier: MIT
 
 plugins {
-    id("convention.android")
+    alias(libs.plugins.convention.android.library)
     alias(libs.plugins.kotlin.compose)
 }
 
-android { namespace = "dev.whosnickdoglio.baenotes.configuration" }
+convention { guard { compose() } }
+
+android { lint { disable.add("ComposeUnstableCollections") } }
 
 dependencies {
+    implementation(platform(libs.compose.bom))
+    implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material)
     implementation(libs.compose.ui)
+    implementation(libs.compose.ui.tooling)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.coroutines.android)
     implementation(libs.glance.appwidget)
@@ -20,5 +25,5 @@ dependencies {
     implementation(projects.models)
     implementation(projects.widget)
 
-    debugImplementation(libs.compose.ui.tooling)
+    lintChecks(libs.lints.compose)
 }
