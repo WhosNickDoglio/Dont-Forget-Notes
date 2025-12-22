@@ -15,12 +15,13 @@ internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<NoteWidgetS
 
     override suspend fun getDataStore(
         context: Context,
-        fileKey: String
+        fileKey: String,
     ): DataStore<NoteWidgetState> =
         DataStoreFactory.create(
             corruptionHandler = ReplaceFileCorruptionHandler { NoteWidgetState() },
             serializer = NoteSerializer(),
-            produceFile = { context.dataStoreFile("bae_notes_$fileKey") })
+            produceFile = { context.dataStoreFile("bae_notes_$fileKey") },
+        )
 
     override fun getLocation(context: Context, fileKey: String) =
         context.dataStoreFile("bae_notes_$fileKey")
