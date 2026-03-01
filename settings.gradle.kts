@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: MIT
 
 pluginManagement {
-    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()

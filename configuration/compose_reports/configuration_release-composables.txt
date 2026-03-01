@@ -3,14 +3,14 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosn
   stable state: NoteWidgetState
   stable onEvent: Function1<NoteEvent, Unit>
   stable modifier: Modifier? = @static <expression>
-  stable defaultTextColors: ImmutableList<NoteColor>? = @static <expression>
-  stable defaultBackgroundColors: ImmutableList<NoteColor>? = @static <expression>
+  unstable defaultTextColors: List<NoteColor>? = @static <expression>
+  unstable defaultBackgroundColors: List<NoteColor>? = @static <expression>
   stable scrollState: ScrollState? = @dynamic <expression>
 )
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.PreviewNewNoteScreen()
 restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun dev.whosnickdoglio.baenotes.configuration.internal.components.ColorRadioGroup(
   stable title: String
-  stable options: ImmutableList<NoteColor>
+  unstable options: List<NoteColor>
   stable currentSelection: NoteColor
   stable onSelected: Function1<NoteColor, Unit>
   stable modifier: Modifier? = @static <expression>
