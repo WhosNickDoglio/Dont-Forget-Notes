@@ -29,23 +29,24 @@ internal const val NoteTextSemantics = "Note content"
 internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = GlanceModifier) {
     LazyColumn(
         modifier =
-        modifier
-            .fillMaxSize()
-            .background(
-                state.backgroundColor.toComposeColor(GlanceTheme.colors.widgetBackground)
-            )
+            modifier
+                .fillMaxSize()
+                .background(
+                    state.backgroundColor.toComposeColor(GlanceTheme.colors.widgetBackground)
+                )
     ) {
         item {
             Text(
                 text = state.content,
-                modifier = GlanceModifier.padding(12.dp)
-                    .semantics { contentDescription = NoteTextSemantics },
+                modifier =
+                    GlanceModifier.padding(12.dp).semantics {
+                        contentDescription = NoteTextSemantics
+                    },
                 style =
-                TextStyle(
-                    fontSize = state.textSize.sp,
-                    color =
-                    state.textColor.toComposeColor(GlanceTheme.colors.onBackground)
-                ),
+                    TextStyle(
+                        fontSize = state.textSize.sp,
+                        color = state.textColor.toComposeColor(GlanceTheme.colors.onBackground),
+                    ),
             )
         }
     }
@@ -55,13 +56,7 @@ internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = Glanc
 @Preview
 @Composable
 private fun PreviewNoteWidget() {
-    GlanceTheme {
-        NoteWidget(
-            state = NoteWidgetState(
-                content = "Hello preview!"
-            )
-        )
-    }
+    GlanceTheme { NoteWidget(state = NoteWidgetState(content = "Hello preview!")) }
 }
 
 private fun NoteColor.toComposeColor(system: ColorProvider): ColorProvider =
