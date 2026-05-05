@@ -36,6 +36,7 @@ plugins {
     alias(libs.plugins.android.app) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.android.lint) apply false
+    alias(libs.plugins.app.versioning) apply false
     alias(libs.plugins.convention.app) apply false
     alias(libs.plugins.convention.android.library) apply false
     alias(libs.plugins.convention.jvm) apply false

@@ -4,6 +4,7 @@
 plugins {
     alias(libs.plugins.convention.app)
     alias(libs.plugins.licensee)
+    alias(libs.plugins.app.versioning)
 }
 
 licensee {
