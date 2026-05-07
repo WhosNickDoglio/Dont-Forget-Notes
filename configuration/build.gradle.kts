@@ -21,7 +21,6 @@ dependencies {
     implementation(libs.coroutines.android)
     implementation(libs.glance.appwidget)
     implementation(libs.glanceTool.configuration)
-    implementation(libs.immutableCollections)
     implementation(projects.models)
     implementation(projects.widget)
 
