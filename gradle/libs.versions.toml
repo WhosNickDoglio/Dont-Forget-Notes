@@ -71,4 +71,4 @@ immutableCollections = { module = "org.jetbrains.kotlinx:kotlinx-collections-imm
 
 desguar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.5" }
 
-lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.4.2" }
+lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.4.3" }
