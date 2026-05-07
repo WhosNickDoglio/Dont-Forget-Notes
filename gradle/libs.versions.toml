@@ -10,7 +10,7 @@ licensee = "1.14.1"
 jdk = "25"
 jdkTarget = "17"
 cacheFix = "3.0.3"
-sort = "0.17.1"
+sort = "0.18.0"
 dependencyAnalysis = "3.10.0"
 convention-plugin = "0.4.0"
 
