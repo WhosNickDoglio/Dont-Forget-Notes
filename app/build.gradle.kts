@@ -1,4 +1,4 @@
-// Copyright (C) 2025 Nicholas Doglio
+// Copyright (C) 2026 Nicholas Doglio
 // SPDX-License-Identifier: MIT
 
 plugins {
@@ -33,6 +33,7 @@ android {
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.kotlin.bom))
+    implementation(libs.androidx.work.runtime)
     implementation(projects.configuration)
     implementation(projects.models)
     implementation(projects.widget)
