@@ -72,4 +72,4 @@ serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", v
 
 desguar = { module = "com.android.tools:desugar_jdk_libs", version = "2.1.5" }
 
-lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.5.0" }
+lints-compose = { module = "com.slack.lint.compose:compose-lint-checks", version = "1.5.1" }
