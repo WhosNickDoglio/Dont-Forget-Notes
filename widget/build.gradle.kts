@@ -4,6 +4,7 @@
 plugins {
     alias(libs.plugins.convention.android.library)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.metro)
 }
 
 convention { published { composeGuard() } }
@@ -23,6 +24,7 @@ dependencies {
     implementation(libs.glance.material)
     implementation(libs.glance.preview)
     implementation(libs.glanceTool.configuration)
+    implementation(projects.graphOwner)
     implementation(projects.models)
 
     testImplementation(libs.assertk)

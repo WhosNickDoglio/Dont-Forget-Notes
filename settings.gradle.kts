@@ -38,6 +38,7 @@ include(
     ":configuration",
     ":models",
     ":widget",
+    ":graph-owner",
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

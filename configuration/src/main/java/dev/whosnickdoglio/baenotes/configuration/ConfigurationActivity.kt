@@ -3,6 +3,7 @@
 
 package dev.whosnickdoglio.baenotes.configuration
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -27,9 +28,15 @@ import dev.whosnickdoglio.baenotes.configuration.internal.NoteEvent
 import dev.whosnickdoglio.baenotes.configuration.internal.theme.BaeNotesTheme
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import dev.whosnickdoglio.baenotes.widget.BaeNoteWidget
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.binding
+import dev.zacsweers.metrox.android.ActivityKey
 import kotlinx.coroutines.launch
 
-public class ConfigurationActivity : ComponentActivity() {
+@ContributesIntoMap(AppScope::class, binding<Activity>())
+@ActivityKey
+public class ConfigurationActivity(private val widget: BaeNoteWidget) : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -39,7 +46,7 @@ public class ConfigurationActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize().safeDrawingPadding(),
                     color = MaterialTheme.colorScheme.background,
                 ) {
-                    ConfigurationScreen()
+                    ConfigurationScreen(widget)
                 }
             }
         }
@@ -48,9 +55,9 @@ public class ConfigurationActivity : ComponentActivity() {
 
 @OptIn(ExperimentalGlanceRemoteViewsApi::class, ExperimentalMaterial3Api::class)
 @Composable
-private fun ConfigurationScreen() {
+private fun ConfigurationScreen(widget: BaeNoteWidget) {
     val scope = rememberCoroutineScope()
-    val configurationState = rememberAppWidgetConfigurationState(BaeNoteWidget)
+    val configurationState = rememberAppWidgetConfigurationState(widget)
 
     // If we don't have a valid id, discard configuration and finish the activity.
     if (configurationState.glanceId == null) {

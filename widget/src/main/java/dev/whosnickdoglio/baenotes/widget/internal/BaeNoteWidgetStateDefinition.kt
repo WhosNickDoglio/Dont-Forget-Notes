@@ -10,8 +10,13 @@ import androidx.datastore.core.handlers.ReplaceFileCorruptionHandler
 import androidx.datastore.dataStoreFile
 import androidx.glance.state.GlanceStateDefinition
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
+import dev.zacsweers.metro.Inject
+import java.io.File
 
-internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<NoteWidgetState> {
+@Inject
+public class BaeNoteWidgetStateDefinition(
+    private val serializer: NoteSerializer
+) : GlanceStateDefinition<NoteWidgetState> {
 
     override suspend fun getDataStore(
         context: Context,
@@ -19,10 +24,10 @@ internal object BaeNoteWidgetStateDefinition : GlanceStateDefinition<NoteWidgetS
     ): DataStore<NoteWidgetState> =
         DataStoreFactory.create(
             corruptionHandler = ReplaceFileCorruptionHandler { NoteWidgetState() },
-            serializer = NoteSerializer(),
+            serializer = serializer,
             produceFile = { context.dataStoreFile("bae_notes_$fileKey") },
         )
 
-    override fun getLocation(context: Context, fileKey: String) =
+    override fun getLocation(context: Context, fileKey: String): File =
         context.dataStoreFile("bae_notes_$fileKey")
 }

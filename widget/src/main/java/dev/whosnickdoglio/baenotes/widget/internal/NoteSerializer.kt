@@ -6,6 +6,7 @@ package dev.whosnickdoglio.baenotes.widget.internal
 import android.util.Log
 import androidx.datastore.core.Serializer
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
+import dev.zacsweers.metro.Inject
 import java.io.EOFException
 import java.io.InputStream
 import java.io.OutputStream
@@ -14,7 +15,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
-internal class NoteSerializer(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) :
+@Inject
+public class NoteSerializer(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) :
     Serializer<NoteWidgetState> {
 
     override val defaultValue: NoteWidgetState = NoteWidgetState()
@@ -34,7 +36,7 @@ internal class NoteSerializer(private val dispatcher: CoroutineDispatcher = Disp
             }
         }
 
-    override suspend fun writeTo(t: NoteWidgetState, output: OutputStream) =
+    override suspend fun writeTo(t: NoteWidgetState, output: OutputStream): Unit =
         withContext(dispatcher) {
             output.write(Json.encodeToString(NoteWidgetState.serializer(), t).encodeToByteArray())
         }

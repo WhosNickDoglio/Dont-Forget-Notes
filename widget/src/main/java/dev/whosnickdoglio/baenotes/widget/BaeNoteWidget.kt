@@ -15,10 +15,14 @@ import androidx.glance.state.GlanceStateDefinition
 import dev.whosnickdoglio.baenotes.model.NoteWidgetState
 import dev.whosnickdoglio.baenotes.widget.internal.BaeNoteWidgetStateDefinition
 import dev.whosnickdoglio.baenotes.widget.internal.NoteWidget
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.createGraph
 
-public object BaeNoteWidget : GlanceAppWidget() {
+@Inject
+public class BaeNoteWidget(glanceStateDefinition: BaeNoteWidgetStateDefinition) :
+    GlanceAppWidget() {
 
-    override val stateDefinition: GlanceStateDefinition<*> = BaeNoteWidgetStateDefinition
+    override val stateDefinition: GlanceStateDefinition<*> = glanceStateDefinition
 
     override val sizeMode: SizeMode = SizeMode.Exact
 
@@ -33,5 +37,8 @@ public object BaeNoteWidget : GlanceAppWidget() {
 }
 
 public class BaeNoteWidgetReceiver : GlanceAppWidgetReceiver() {
-    override val glanceAppWidget: GlanceAppWidget = BaeNoteWidget
+    private val graph: WidgetDependencyGraph
+        get() = createGraph<WidgetDependencyGraph>()
+
+    override val glanceAppWidget: GlanceAppWidget = graph.widget
 }

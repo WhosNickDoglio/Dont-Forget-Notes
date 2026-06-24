@@ -3,8 +3,10 @@
 
 plugins {
     alias(libs.plugins.convention.app)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.licensee)
     alias(libs.plugins.app.versioning)
+    alias(libs.plugins.metro)
 }
 
 licensee {
@@ -34,7 +36,9 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.work.runtime)
+    implementation(libs.metrox.android)
     implementation(projects.configuration)
+    implementation(projects.graphOwner)
     implementation(projects.models)
     implementation(projects.widget)
 

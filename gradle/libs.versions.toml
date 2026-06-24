@@ -14,6 +14,7 @@ sort = "0.19.0"
 dependencyAnalysis = "3.17.0"
 convention-plugin = "0.4.0"
 work = "2.11.2"
+metro = "1.2.1"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
@@ -38,6 +39,7 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
 ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.26.0" }
+metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version = "1.13.0" }
@@ -63,6 +65,8 @@ glance-appwidget-preview = { module = "androidx.glance:glance-appwidget-preview"
 junit = { module = "junit:junit", version = "4.13.2" }
 assertk = { module = "com.willowtreeapps.assertk:assertk", version = "0.28.1" }
 robolectric = { module = "org.robolectric:robolectric", version = "4.16.1" }
+
+metrox-android = { module = "dev.zacsweers.metro:metrox-android", version.ref = "metro" }
 
 kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
 
