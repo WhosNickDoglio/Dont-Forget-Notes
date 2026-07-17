@@ -19,13 +19,13 @@ android {
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.kotlin.bom))
+    implementation(projects.graphOwner)
+    implementation(projects.models)
     implementation(libs.glance.appwidget)
     implementation(libs.glance.appwidget.preview)
     implementation(libs.glance.material)
     implementation(libs.glance.preview)
     implementation(libs.glanceTool.configuration)
-    implementation(projects.graphOwner)
-    implementation(projects.models)
 
     testImplementation(libs.assertk)
     testImplementation(libs.glance.appwidget.testing)

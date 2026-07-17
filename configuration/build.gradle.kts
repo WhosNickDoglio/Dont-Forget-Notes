@@ -16,6 +16,8 @@ dependencies {
 
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.kotlin.bom))
+    implementation(projects.models)
+    implementation(projects.widget)
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material)
     implementation(libs.compose.ui.tooling)
@@ -24,8 +26,6 @@ dependencies {
     implementation(libs.glance.appwidget)
     implementation(libs.glanceTool.configuration)
     implementation(libs.metrox.android)
-    implementation(projects.models)
-    implementation(projects.widget)
 
     lintChecks(libs.lints.compose)
 }

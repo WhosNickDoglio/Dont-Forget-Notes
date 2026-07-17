@@ -35,12 +35,12 @@ android {
 dependencies {
     implementation(platform(libs.compose.bom))
     implementation(platform(libs.kotlin.bom))
-    implementation(libs.androidx.work.runtime)
-    implementation(libs.metrox.android)
     implementation(projects.configuration)
     implementation(projects.graphOwner)
     implementation(projects.models)
     implementation(projects.widget)
+    implementation(libs.androidx.work.runtime)
+    implementation(libs.metrox.android)
 
     coreLibraryDesugaring(libs.desguar)
 
