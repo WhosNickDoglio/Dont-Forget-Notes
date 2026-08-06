@@ -12,9 +12,7 @@ import dev.zacsweers.metrox.android.MetroApplication
 
 public class NotesApplication : Application(), MetroApplication, GraphOwner {
 
-    override val graph: AppDependencyGraph by lazy {
-        createGraph()
-    }
+    override val graph: AppDependencyGraph by lazy { createGraph() }
     override val appComponentProviders: MetroAppComponentProviders
         get() = graph
 }

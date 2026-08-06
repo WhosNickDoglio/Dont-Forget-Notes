@@ -38,7 +38,7 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 licensee = { id = "app.cash.licensee", version.ref = "licensee" }
 sortDependencies = { id = "com.squareup.sort-dependencies", version.ref = "sort" }
-ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.26.0" }
+ktfmt = { id = "com.ncorti.ktfmt.gradle", version = "0.27.0" }
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
 
 [libraries]

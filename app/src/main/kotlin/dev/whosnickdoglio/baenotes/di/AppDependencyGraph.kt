@@ -7,5 +7,4 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph
 import dev.zacsweers.metrox.android.MetroAppComponentProviders
 
-@DependencyGraph(AppScope::class)
-public interface AppDependencyGraph: MetroAppComponentProviders
+@DependencyGraph(AppScope::class) public interface AppDependencyGraph : MetroAppComponentProviders

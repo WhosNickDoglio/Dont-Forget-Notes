@@ -14,9 +14,8 @@ import dev.zacsweers.metro.Inject
 import java.io.File
 
 @Inject
-public class BaeNoteWidgetStateDefinition(
-    private val serializer: NoteSerializer
-) : GlanceStateDefinition<NoteWidgetState> {
+public class BaeNoteWidgetStateDefinition(private val serializer: NoteSerializer) :
+    GlanceStateDefinition<NoteWidgetState> {
 
     override suspend fun getDataStore(
         context: Context,
