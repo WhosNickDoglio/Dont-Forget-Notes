@@ -14,7 +14,7 @@ sort = "0.20.0"
 dependencyAnalysis = "3.18.0"
 convention-plugin = "0.4.0"
 work = "2.11.2"
-metro = "1.4.1"
+metro = "1.4.2"
 
 [plugins]
 android-app = { id = "com.android.application", version.ref = "agp" }
