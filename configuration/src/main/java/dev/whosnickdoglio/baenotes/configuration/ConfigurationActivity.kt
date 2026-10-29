@@ -69,7 +69,7 @@ private fun ConfigurationScreen(widget: BaeNoteWidget) {
         appWidgetConfigurationState = configurationState,
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { scope.launch { configurationState.applyConfiguration() } }
+                onClick = { scope.launch { configurationState.applyConfiguration() } },
             ) {
                 Icon(
                     painter = painterResource(R.drawable.done_check),

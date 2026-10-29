@@ -33,7 +33,7 @@ console-reports:
 comments:
   active: true
   AbsentOrWrongFileLicense:
-    active: true
+    active: false
     licenseTemplateIsRegex: true
     licenseTemplate: |
       // Copyright \(C\) \d{4} Nicholas Doglio\n// SPDX-License-Identifier: MIT

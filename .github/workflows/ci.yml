@@ -41,12 +41,23 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Build
         run: ./gradlew assemble
+  Kempt:
+    runs-on: ubuntu-latest
+    needs: [ Build ]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: ./.github/actions/setup
+        with:
+          encryption_key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+      - uses: ZacSweers/kempt@7020aae27a2f81a38e5b01b78a0735d332da3876 # main
+        with:
+          cache: true
   Lint:
     runs-on: ubuntu-latest
     needs: [ Build ]
     strategy:
       matrix:
-        command: [ detekt detektMain detektTest, lint, ktfmtCheck, checkSortDependencies, licensee, releaseComposeCompilerCheck ]
+        command: [ detekt detektMain detektTest, lint, licensee, releaseComposeCompilerCheck ]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:

@@ -33,7 +33,7 @@ internal fun RadioButtonRow(
                 selected = isSelected,
                 role = Role.RadioButton,
                 onClick = onSelected,
-            )
+            ),
     ) {
         RadioButton(selected = isSelected, onClick = null)
         Text(text = title)

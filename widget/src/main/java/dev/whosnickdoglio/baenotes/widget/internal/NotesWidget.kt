@@ -32,8 +32,8 @@ internal fun NoteWidget(state: NoteWidgetState, modifier: GlanceModifier = Glanc
             modifier
                 .fillMaxSize()
                 .background(
-                    state.backgroundColor.toComposeColor(GlanceTheme.colors.widgetBackground)
-                )
+                    state.backgroundColor.toComposeColor(GlanceTheme.colors.widgetBackground),
+                ),
     ) {
         item {
             Text(
