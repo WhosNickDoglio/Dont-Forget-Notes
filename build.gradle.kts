@@ -3,7 +3,6 @@
 
 plugins {
     alias(libs.plugins.dependency.analysis)
-    alias(libs.plugins.doctor)
     alias(libs.plugins.dependencyGuard) apply false
     alias(libs.plugins.android.app) apply false
     alias(libs.plugins.android.library) apply false
@@ -22,12 +21,6 @@ plugins {
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.metro) apply false
     alias(libs.plugins.licensee) apply false
-}
-
-doctor {
-    javaHome {
-        failOnError = false
-    }
 }
 
 // https://docs.gradle.org/8.9/userguide/gradle_daemon.html#daemon_jvm_criteria
